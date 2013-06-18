@@ -1,70 +1,27 @@
-﻿<!DOCTYPE html><!--HTML5 doctype-->
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>jqMobi Kitchen Sink</title>
+    <title>Cordova Web Mockup</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 
 
-    <link rel="stylesheet" type="text/css" href="kitchensink/icons.css"/>
-    <link rel="stylesheet" type="text/css" href="kitchensink/jq.ui.css" title="default"/>
-    <!--<link rel="stylesheet" type="text/css" href="plugins/css/jq.8tiles.css" title="8tiles"/>-->
-
+    <link rel="stylesheet" type="text/css" href="css/icons.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jq.ui.css" title="default"/>
     <style>
-        .scrollBar {
-            background: white;
-        }
 
-        h3 {
-            text-align: center;
-            font-size: 35px;
-        }
-
-        ul.iconLinks li {
-            font-size: 12px;
-            font-weight: normal;
-        }
-
-        .listbutton {
-            display: block;
-            border: 1px solid black;
-            color: black;
-            background: orange;
-            border-radius: 5px;
-            width: 80%;
-            text-decoration: none;
-            text-align: center;
-            margin: auto;
-            margin-bottom: 10px;
-            height: 30px;
-            line-height: 30px;
-        }
-
-        .class16 {
-            background: green;
-            color: red;
-        }
-
-        .jqmscrollBar {
-            background: white !important;
-        }
     </style>
-    <!-- uncomment for AppMobi apps
-    <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
-    <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>
-    -->
 
 
     <script type="text/javascript" charset="utf-8" src="./jq.mobi.js"></script>
     <script type="text/javascript" charset="utf-8" src="./cordova_detech_os.js"></script>
     <script>
         //auto load suitable cordova js lib
-        detech();
+        detechCordova();
     </script>
     <script type="text/javascript" charset="utf-8" src="cordova/js/app.js"></script>
-    <!-- include jq.desktopBrowsers.js on desktop browsers only -->
     <script>
 
 
@@ -76,43 +33,34 @@
             console.log("unloaded " + what.id);
         }
 
-        if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
-            console.log("adding");
-            var script = document.createElement("script");
 
-            script.src = "plugins/jq.desktopBrowsers.js";
-            var tag = $("head").append(script);
-            if (!$.os.ie) {
-                //	$.os.desktop=true;
-                //	$.feat.nativeTouchScroll=true;
-            }
-        }
-        var oldElem = "default";
-        function setActiveStyleSheet(title) {
-            var a = document.getElementsByTagName("link");
-            var currElem;
-
-            if (title == oldElem.getAttribute("title") || oldElem == "default")
-                return;
-            for (i = 0; i < a.length; i++) {
-
-                if (a[i].getAttribute("title") == title) {
-                    currElem = a[i];
-                }
-                else if (!a[i].getAttribute("disabled") && a[i].getAttribute("title"))
-                    oldElem = a[i];
-            }
-
-            currElem.removeAttribute("disabled");
-            jq.ui.showMask();
-            window.setTimeout(function () {
-                jq.ui.hideMask();
-                oldElem.setAttribute("disabled", "true");
-            }, 500);
-        }
         $(document).ready(function () {
-            oldElem = document.getElementsByTagName("link")[0];
-
+            app.initialize();
+            $("#taptest").bind("tap", function () {
+                alert("I was tapped");
+            })
+            $("#singletaptest").bind("singleTap", function () {
+                alert("I was single tapped");
+            })
+            $("#longtaptest").bind("longTap", function () {
+                alert("I was a long tap");
+            })
+            $("#doubletaptest").bind("doubleTap", function () {
+                alert("I was a double tap");
+            })
+            $("#swipetest").bind("swipe", function () {
+                alert("I was a swiped");
+            })
+            //鼠标模拟触摸滑动
+            if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+                var script = document.createElement("script");
+                script.src = "plugins/jq.desktopBrowsers.js";
+                var tag = $("head").append(script);
+                if (!$.os.ie) {
+                    //	$.os.desktop=true;
+                    //	$.feat.nativeTouchScroll=true;
+                }
+            }
         });
 
 
@@ -130,14 +78,14 @@
 
     <script type="text/javascript">
         /* This function runs once the page is loaded, but appMobi is not yet active */
-        var webRoot = "./kitchensink/";
+        var webRoot = "./css/";
         $.ui.autoLaunch = false;
         $.ui.openLinksNewTab = false;
         $.ui.resetScrollers = false;
 
         //$.ui.nativeTouchScroll=false;
         var init = function () {
-            $.ui.backButtonText = "Back";
+            $.ui.backButtonText = "返回";
             window.setTimeout(function () {
                 $.ui.launch();
             }, 1500);
@@ -153,7 +101,7 @@
         var onDeviceReady = function () {
             AppMobi.device.setRotateOrientation("portrait");
             AppMobi.device.setAutoRotate(false);
-            webRoot = AppMobi.webRoot + "kitchensink/";
+            webRoot = AppMobi.webRoot + "css/";
             //hide splash screen
             AppMobi.device.hideSplashScreen();
             $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
@@ -162,7 +110,6 @@
         document.addEventListener("appMobi.device.ready", onDeviceReady, false);
         function showHide(obj, objToHide) {
             var el = $("#" + objToHide)[0];
-
             if (obj.className == "expanded") {
                 obj.className = "collapsed";
             }
@@ -170,7 +117,6 @@
                 obj.className = "expanded";
             }
             $(el).toggle();
-
         }
 
     </script>
@@ -180,7 +126,7 @@
 <div id="jQUi">
 <!-- this is the splashscreen you see. -->
 <div id="splashscreen" class='ui-loader'>
-    <img src="kitchensink/images/splash.png">
+    <img src="css/images/splash.png">
     <br><br>
     <span class='ui-icon ui-icon-loading spin'></span>
 
@@ -747,7 +693,7 @@
         <li><a href="#uifooter">Custom Footers</a></li>
         <li><a href="#uiside">Side Navigation Menu</a></li>
         <li><a href="#uiicons">SVG Icons</a></li>
-        <li><a href="kitchensink/external.html" data-persist-ajax="true" data-refresh-ajax="true"
+        <li><a href="css/external.html" data-persist-ajax="true" data-refresh-ajax="true"
                data-pull-scroller="true">Load External Content</a></li>
         <li><a href="http://www.jqmobi.com" target="_blank">Open a new page</a></li>
         <li><a href="#uidefer">Defer loading</a></li>
@@ -848,23 +794,23 @@
 
 </div>
 <div id="jqmforms" title="Form Styles" class="panel" data-footer='footerui'>
-    <form>
-        <fieldset>
-            <legend>Field elements</legend>
-            <label for="name">Full Name</label>
-            <br/>
-            <input type="text" id="name" class='jq-ui-forms'/>
-            <br/>
-            <label for="email">E-mail</label>
-            <br/>
-            <input type="text" id="email" class='jq-ui-forms'/>
-            <br/>
-            <label for="password">Password</label>
-            <br/> <span><input type="password" id="password" class='jq-ui-forms'/></span>
-            <br/>
-            <!-- span is needed for android password fix -->
-            <label for="country">Country</label>
-            <br/>	<span><!-- span is needed for android select box fix -->
+<form>
+<fieldset>
+    <legend>Field elements</legend>
+    <label for="name">Full Name</label>
+    <br/>
+    <input type="text" id="name" class='jq-ui-forms'/>
+    <br/>
+    <label for="email">E-mail</label>
+    <br/>
+    <input type="text" id="email" class='jq-ui-forms'/>
+    <br/>
+    <label for="password">Password</label>
+    <br/> <span><input type="password" id="password" class='jq-ui-forms'/></span>
+    <br/>
+    <!-- span is needed for android password fix -->
+    <label for="country">Country</label>
+    <br/>	<span><!-- span is needed for android select box fix -->
 					<select id="country" class='jq-ui-forms'>
                         <option value='1'>USA 1</option>
                         <option value='2'>USA 2</option>
@@ -878,181 +824,181 @@
                         <option value='10'>USA 10</option>
                     </select>
 					</span>
-            <br/>
-            <br/>
-            <label for="web">Comments</label>
-            <textarea name="web" class='jq-ui-forms'></textarea>
-            <br/>
-        </fieldset>
-        <fieldset>
-            <legend>Radios and checkboxes</legend>
-            <h4>Gender:</h4>
+    <br/>
+    <br/>
+    <label for="web">Comments</label>
+    <textarea name="web" class='jq-ui-forms'></textarea>
+    <br/>
+</fieldset>
+<fieldset>
+    <legend>Radios and checkboxes</legend>
+    <h4>Gender:</h4>
 
-            <br>
-
-            <p>
-                <input type="radio" value="male" id="male" name="gender" class="jq-ui-forms"
-                        />
-                <label for="male">Male</label>
-            </p>
-
-            <p>
-                <input type="radio" value="Female" id="female" name="gender" class="jq-ui-forms"
-                        />
-                <label for="female">Female</label>
-            </p>
-            <h4>Stuff you like:</h4>
-
-            <br>
-
-            <p>
-                <input type="checkbox" value="CSS3" id="css3" class="jq-ui-forms"/>
-                <label for="css3">CSS3</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="HTML5" id="html5" class="jq-ui-forms"/>
-                <label for="html5">HTML5</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="JavaScript" id="javascript" class="jq-ui-forms"
-                        />
-                <label for="javascript">JavaScript</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Other" id="other" class="jq-ui-forms"/>
-                <label for="other">Other</label>
-            </p>
-        </fieldset>
-        <fieldset>
-            <legend>Disabled and pre-selected</legend>
-            <h4>Disabling and checking radio inputs:</h4>
-
-            <br>
-
-            <p>
-                <input type="radio" value="disabled" id="disabled" name="disabled" disabled
-                       class="jq-ui-forms"/>
-                <label for="disabled">This is disabled</label>
-            </p>
-
-            <p>
-                <input type="radio" value="check" id="check" name="check" checked class="jq-ui-forms"
-                        />
-                <label for="check">This is checked</label>
-            </p>
-            <h4>Disabling and checking checkbox inputs:</h4>
-
-            <br>
-
-            <p>
-                <input type="checkbox" value="disabled" id="disabled2" disabled class="jq-ui-forms"
-                        />
-                <label for="disabled2">This is disabled</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="check" id="check2" checked class="jq-ui-forms"
-                        />
-                <label for="check2">This is checked</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Stop" id="disablecheck" disabled checked
-                       class="jq-ui-forms"/>
-                <label for="disablecheck">This is checked and disabled</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Other" id="other2" class="jq-ui-forms"/>
-                <label for="other2">Other</label>
-            </p>
-        </fieldset>
-        <fieldset>
-            <legend>Sliders</legend>
-            <h4>Gender:</h4>
-
-            <p>
-                <input type="radio" value="maleslider" id="slidermale" name="gender" class="jq-ui-slider"
-                        />
-                <label for="slidermale">Male</label>
-            </p>
-
-            <p>
-                <input type="radio" value="femaleslider" id="sliderfemale" name="gender"
-                       class="jq-ui-slider"/>
-                <label for="sliderfemale">Female</label>
-            </p>
-            <h4>Stuff you like:</h4>
-
-            <p>
-                <input type="checkbox" value="CSS3" id="css3slider" class="jq-ui-slider"
-                        />
-                <label for="css3slider">CSS3</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="HTML5" id="html5slider" class="jq-ui-slider"
-                        />
-                <label for="html5slider">HTML5</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="JavaScript" id="javascriptslider" class="jq-ui-slider"
-                        />
-                <label for="javascriptslider">JavaScript</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Other" id="otherslider" class="jq-ui-slider"
-                        />
-                <label for="otherslider">Other</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Other" id="otherd" class="jq-ui-slider"
-                       disabled/>
-                <label for="otherd">Disabled</label>
-            </p>
-
-            <p>
-                <input type="checkbox" value="Other" id="otherdc" class="jq-ui-slider"
-                       disabled checked/>
-                <label for="otherdc">Disabled</label>
-            </p>
-        </fieldset>
-        <fieldset>
-            <legend>HTML5 input</legend>
-            <label for="date">Date</label>
-            <br/>
-            <input type="date" id="date" class='jq-ui-forms'/>
-            <br/>
-            <label for="month">Month</label>
-            <br/>
-            <input type="month" id="month" class='jq-ui-forms'/>
-            <br/>
-            <label for="datetime">Date/Time</label>
-            <br/>
-            <input type="datetime" id="datetime" class='jq-ui-forms'/>
-            <br/>
-            <label for="datetime-local">Date/Time Local</label>
-            <br/>
-            <input type="datetime-local" id="datetime-local" class='jq-ui-forms'/>
-            <br/>
-            <label for="time">Time</label>
-            <br/>
-            <input type="time" id="time" class='jq-ui-forms'/>
-            <br/>
-            <label for="range">Range</label>
-            <br/>
-            <input type="range" id="range" class='jq-ui-forms'/>
-            <br/>
-    </form>
     <br>
+
+    <p>
+        <input type="radio" value="male" id="male" name="gender" class="jq-ui-forms"
+                />
+        <label for="male">Male</label>
+    </p>
+
+    <p>
+        <input type="radio" value="Female" id="female" name="gender" class="jq-ui-forms"
+                />
+        <label for="female">Female</label>
+    </p>
+    <h4>Stuff you like:</h4>
+
     <br>
+
+    <p>
+        <input type="checkbox" value="CSS3" id="css3" class="jq-ui-forms"/>
+        <label for="css3">CSS3</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="HTML5" id="html5" class="jq-ui-forms"/>
+        <label for="html5">HTML5</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="JavaScript" id="javascript" class="jq-ui-forms"
+                />
+        <label for="javascript">JavaScript</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Other" id="other" class="jq-ui-forms"/>
+        <label for="other">Other</label>
+    </p>
+</fieldset>
+<fieldset>
+    <legend>Disabled and pre-selected</legend>
+    <h4>Disabling and checking radio inputs:</h4>
+
     <br>
+
+    <p>
+        <input type="radio" value="disabled" id="disabled" name="disabled" disabled
+               class="jq-ui-forms"/>
+        <label for="disabled">This is disabled</label>
+    </p>
+
+    <p>
+        <input type="radio" value="check" id="check" name="check" checked class="jq-ui-forms"
+                />
+        <label for="check">This is checked</label>
+    </p>
+    <h4>Disabling and checking checkbox inputs:</h4>
+
+    <br>
+
+    <p>
+        <input type="checkbox" value="disabled" id="disabled2" disabled class="jq-ui-forms"
+                />
+        <label for="disabled2">This is disabled</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="check" id="check2" checked class="jq-ui-forms"
+                />
+        <label for="check2">This is checked</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Stop" id="disablecheck" disabled checked
+               class="jq-ui-forms"/>
+        <label for="disablecheck">This is checked and disabled</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Other" id="other2" class="jq-ui-forms"/>
+        <label for="other2">Other</label>
+    </p>
+</fieldset>
+<fieldset>
+    <legend>Sliders</legend>
+    <h4>Gender:</h4>
+
+    <p>
+        <input type="radio" value="maleslider" id="slidermale" name="gender" class="jq-ui-slider"
+                />
+        <label for="slidermale">Male</label>
+    </p>
+
+    <p>
+        <input type="radio" value="femaleslider" id="sliderfemale" name="gender"
+               class="jq-ui-slider"/>
+        <label for="sliderfemale">Female</label>
+    </p>
+    <h4>Stuff you like:</h4>
+
+    <p>
+        <input type="checkbox" value="CSS3" id="css3slider" class="jq-ui-slider"
+                />
+        <label for="css3slider">CSS3</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="HTML5" id="html5slider" class="jq-ui-slider"
+                />
+        <label for="html5slider">HTML5</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="JavaScript" id="javascriptslider" class="jq-ui-slider"
+                />
+        <label for="javascriptslider">JavaScript</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Other" id="otherslider" class="jq-ui-slider"
+                />
+        <label for="otherslider">Other</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Other" id="otherd" class="jq-ui-slider"
+               disabled/>
+        <label for="otherd">Disabled</label>
+    </p>
+
+    <p>
+        <input type="checkbox" value="Other" id="otherdc" class="jq-ui-slider"
+               disabled checked/>
+        <label for="otherdc">Disabled</label>
+    </p>
+</fieldset>
+<fieldset>
+    <legend>HTML5 input</legend>
+    <label for="date">Date</label>
+    <br/>
+    <input type="date" id="date" class='jq-ui-forms'/>
+    <br/>
+    <label for="month">Month</label>
+    <br/>
+    <input type="month" id="month" class='jq-ui-forms'/>
+    <br/>
+    <label for="datetime">Date/Time</label>
+    <br/>
+    <input type="datetime" id="datetime" class='jq-ui-forms'/>
+    <br/>
+    <label for="datetime-local">Date/Time Local</label>
+    <br/>
+    <input type="datetime-local" id="datetime-local" class='jq-ui-forms'/>
+    <br/>
+    <label for="time">Time</label>
+    <br/>
+    <input type="time" id="time" class='jq-ui-forms'/>
+    <br/>
+    <label for="range">Range</label>
+    <br/>
+    <input type="range" id="range" class='jq-ui-forms'/>
+    <br/>
+</form>
+<br>
+<br>
+<br>
 
 </div>
 
@@ -1318,17 +1264,17 @@
 
 <!-- jqUi > Transitions -->
 <div title="Slide" id="transition1" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Slide Up" id="transition2" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Slide Down" id="transition3" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Pop" id="transition4" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Flip" id="transition5" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Fade" id="transition6" class="panel splashscreen" data-footer='footerui' style="padding-left:0px"><img
-        src="kitchensink/images/splash.png"></div>
+        src="css/images/splash.png"></div>
 <div title="Modal" id="transition7" class="panel splashscreen" data-modal="true" data-unload="unloadedPanel">I'm a modal
     window...woot woot
     <br><br><br>
@@ -2293,22 +2239,8 @@
 <div class="panel" title="touch events" id="touchevents">
     <script>
         $(document).ready(function () {
-            $("#taptest").bind("tap", function () {
-                alert("I was tapped");
-            })
-            $("#singletaptest").bind("singleTap", function () {
-                alert("I was single tapped");
-            })
-            $("#longtaptest").bind("longTap", function () {
-                alert("I was a long tap");
-            })
-            $("#doubletaptest").bind("doubleTap", function () {
-                alert("I was a double tap");
-            })
-            $("#swipetest").bind("swipe", function () {
-                alert("I was a swiped");
-            })
-            app.initialize();
+
+
         });
     </script>
     <h2>Touch Events</h2>
@@ -2351,7 +2283,7 @@
 <header id="testheader">
     <a id="backButton" class='button' style='left:0px;left:auto;overflow:hidden'>Go Back</a>
 
-    <h1>Custom Header</h1>
+    <h1>自定义标题</h1>
 </header>
 <!-- ------------------------------------------ -->
 <nav>

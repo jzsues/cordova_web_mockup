@@ -7,7 +7,7 @@
  */
 
 
-function detech() {
+function detechCordova() {
     //alert("is android:" + $.os.android);
     //alert("is ios:" + $.os.ios);
     if ($.os.android) {

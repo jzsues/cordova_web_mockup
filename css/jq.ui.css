@@ -1149,7 +1149,7 @@ textarea {
   width: 100%;
   left: 0px;
   min-height: 100%;
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: rgba(0, 0, 0, 0.55) !important;
   color: white !important;
   font-size: 30px;
   text-align: center;
@@ -1159,7 +1159,7 @@ textarea {
   padding-top: 80px !important;
 }
 .splashscreen {
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: rgba(0, 0, 0, 0.55) !important;
   padding-left: 40px;
   padding-top: 30px !important;
   min-height: 100%;
@@ -1179,8 +1179,7 @@ textarea {
   margin-left: -100px;
   margin-top: -35px;
   padding: 10px 30px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.55);
 }
 .ui-loader h1 {
   font-size: 15px;
