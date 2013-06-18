@@ -593,8 +593,9 @@ input, textarea {
   .menuulSelectedMixin(@color) {
   }
 
-  #menu ul > li >a.selected, ul > li.selected { .menuulSelectedMixin(@color-bg);
-    border-color: @color-ui-text;
+  #menu ul > li >a.selected, ul > li.selected {
+    .menuulSelectedMixin(@color-bg);
+    border-color: @color-form-focus-border;
   }
 
   /**********************************************************
