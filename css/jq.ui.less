@@ -45,6 +45,9 @@
 
 @the-radius: 4px;
 
+@header-height: 48px;
+@nav-height: 62px;
+
 /**********************************************************
   CALCULATED VARIABLES
 **********************************************************/
@@ -222,7 +225,7 @@ input, textarea {
     display: block;
     left: 0px;
     right: 0px;
-    height: 48px;
+    height: @header-height;
     z-index: 250;
     .gradient1;
     //border-bottom: 1px solid darken(@color-2, 20%);
@@ -306,7 +309,7 @@ input, textarea {
     right: 0;
     bottom: 0;
     z-index: 1000;
-    height: 62px;
+    height: @nav-height;
     padding: 0 1px;
     .gradient2;
     //border-top: 1px solid lighten(@color-2, 20%);
