@@ -321,6 +321,8 @@ textarea {
   box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.4);
   text-align: center !important;
   background-color: #e8e8e8;
+  margin: 0;
+  float: left;
 }
 #jQUi #navbar a {
   position: relative;
@@ -594,6 +596,8 @@ textarea {
   background-color: transparent;
   display: inline-block;
   color: rgba(0, 0, 0, 0.8);
+  float: right;
+  margin-top: 0px;
 }
 #jQUi .menuButton:active {
   background-color: rgba(183, 183, 183, 0.7);
