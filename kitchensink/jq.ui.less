@@ -1,0 +1,1542 @@
+/**********************************************************
+  THEME VARIABLES -- TO BE MOVED TO EXTERNAL FILE, PER THEME
+**********************************************************/
+/* General background color. Side-sliding menu is also based on this*/
+@color-bg: #F8F8F8;
+
+/* Used in the header . */
+//@color-1: #162F45;
+
+/* Used for footer. */
+//@color-2: #2D3944;
+
+@color-splashscreen-bg: rgba(0, 0, 0, 0.70);
+
+@color-form-border: #d1d1d1;
+
+@color-form-focus-border: #b6b6b6;
+
+/* Used for other ui items.*/
+@color-ui-bg: #FAFAFA;
+
+@color-ui-text: #000;
+
+/* Used for buttons.*/
+@color-button-bg: #ddd;
+
+@color-button-text: rgba(0, 0, 0, 0.80);
+
+@color-header-navbar-bg: #E8E8E8;
+
+@color-navbar-selected: #fff;
+
+/* Used for nav bar icons and. */
+@color-header-navbar-text: rgba(0, 0, 0, 0.80);
+
+/* Used for text over the background. */
+@color-general-text: rgba(0, 0, 0, 0.90);
+;
+
+@typeface-text: Arial, Helvetica, sans-serif;
+@size-font-text: 14px;
+
+@typeface-heading: Arial, Helvetica, sans-serif;
+@size-font-heading: 21px;
+
+@the-radius: 4px;
+
+/**********************************************************
+  CALCULATED VARIABLES
+**********************************************************/
+/* Text line height */
+@size-leading-text: @size-font-text * 1.4;
+@size-leading-heading: @size-font-heading * 1.2;
+
+/**********************************************************
+   LETTERPRESSED TEXT MIXIN
+***********************************************************/
+.textShadowMixin(@color) {
+}
+
+.textShadowMixin(@color) when (lightness(@color-ui-text) >= 50%) {
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
+}
+
+.textShadowMixin(@color) when (lightness(@color-ui-text) < 50%) {
+  text-shadow: 0 1px rgba(255, 255, 255, .5);
+}
+
+/**********************************************************
+  JQ UI STYLES
+**********************************************************/
+body {
+  -ms-touch-action: none;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+}
+
+* {
+  -webkit-user-select: none; /* Prevent copy paste for all elements except text fields */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Set highlight color for user interaction */
+  -webkit-touch-callout: none; /* prevent the popup menu on any links*/
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  -webkit-user-select: text;
+}
+
+/* Allow text selection for input and text fields */
+
+#jQUi {
+
+  /**********************************************************
+    DISPLAY PARAMETERS
+  **********************************************************/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  img {
+    border: none;
+  }
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+  -webkit-box-sizing: border-box;
+  display: -webkit-box; /* Orient first container vertically */
+  -webkit-box-orient: vertical; /* Stretch child elements to fit the container */
+  -webkit-box-align: stretch;
+
+  /**********************************************************
+    DEFAULT STYLES
+  **********************************************************/
+  background-color: @color-bg;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: @size-font-text;
+  line-height: @size-leading-text;
+  color: @color-general-text;
+
+  /**********************************************************
+    TAG ATTRIBUTES
+  **********************************************************/
+  p {
+    font-family: @typeface-text;
+    font-size: @size-font-text;
+    font-weight: normal;
+    line-height: @size-leading-text;
+    color: @color-general-text;
+    padding: 12px;
+  }
+
+  h1 {
+    font-family: @typeface-heading;
+    font-size: @size-font-heading;
+    font-weight: bold;
+    line-height: @size-leading-heading;
+    color: @color-ui-text;
+    .textShadowMixin(@color-ui-text);
+    text-overflow: ellipsis;
+  }
+
+  /* UI GRADIENTS (mixins to be used in header, footer, buttons, etc.) */
+
+  .gradient1Gen(@color) {
+  }
+  .gradient1Gen(@color) when (lightness(@color-1)>=20%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, @color-1), color-stop(50%, darken(@color-1, 5%)), color-stop(100%, darken(@color-1, 15%)));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, @color-1), color-stop(50%, darken(@color-1, 5%)), color-stop(100%, darken(@color-1, 15%)));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, @color-1), color-stop(50%, darken(@color-1, 5%)), color-stop(100%, darken(@color-1, 15%)));
+  }
+  .gradient1Gen(@color) when (lightness(@color-1)<20%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, lighten(@color-1, 15%)), color-stop(50%, @color-1));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, lighten(@color-1, 15%)), color-stop(50%, @color-1));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-1, 10%)), color-stop(50%, lighten(@color-1, 15%)), color-stop(50%, @color-1));
+  }
+
+  .gradient2Gen(@color2) {
+  }
+  .gradient2Gen(@color2) when (lightness(@color-2)>=20%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, @color-2), color-stop(50%, darken(@color-2, 5%)), color-stop(100%, darken(@color-2, 15%)));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, @color-2), color-stop(50%, darken(@color-2, 5%)), color-stop(100%, darken(@color-2, 15%)));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, @color-2), color-stop(50%, darken(@color-2, 5%)), color-stop(100%, darken(@color-2, 15%)));
+  }
+  .gradient2Gen(@color2) when (lightness(@color-2)<20%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, lighten(@color-2, 15%)), color-stop(50%, @color-2));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, lighten(@color-2, 15%)), color-stop(50%, @color-2));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-2, 10%)), color-stop(50%, lighten(@color-2, 15%)), color-stop(50%, @color-2));
+  }
+
+  .gradient3Gen(@color3) {
+  }
+  .gradient3Gen(@color3) when (lightness(@color-ui-bg)>=80%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @color-ui-bg), color-stop(100%, darken(@color-ui-bg, 10%)));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, @color-ui-bg), color-stop(100%, darken(@color-ui-bg, 10%)));
+    background-image: linear-gradient(to bottom, color-stop(0%, @color-ui-bg), color-stop(100%, darken(@color-ui-bg, 10%)));
+  }
+  .gradient3Gen(@color3) when (lightness(@color-ui-bg)<80%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-ui-bg, 15%)), color-stop(90%, @color-ui-bg));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-ui-bg, 15%)), color-stop(90%, @color-ui-bg 90%));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-ui-bg, 15%)), color-stop(90%, @color-ui-bg));
+  }
+
+  .gradient4Gen(@color4) {
+  }
+  .gradient4Gen(@color4) when (lightness(@color-button-bg)>=80%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, @color-button-bg), color-stop(100%, darken(@color-button-bg, 20%)));
+    background-image: -webkit-linear-gradient(top, color-stop(10%, @color-button-bg), color-stop(100%, darken(@color-ui-bg, 20%)));
+    background-image: linear-gradient(to bottom, color-stop(10%, @color-button-bg), color-stop(100%, darken(@color-button-bg, 20%)));
+  }
+  .gradient4Gen(@color4) when (lightness(@color-button-bg)<80%) {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(@color-button-bg, 25%)), color-stop(90%, @color-button-bg));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, lighten(@color-button-bg, 25%)), color-stop(90%, @color-button-bg 90%));
+    background-image: linear-gradient(to bottom, color-stop(0%, lighten(@color-button-bg, 25%)), color-stop(90%, @color-button-bg));
+  }
+
+  .gradient1 {
+    //    .gradient1Gen(@color-1);
+  }
+  .gradient2 {
+    //    .gradient2Gen(@color-2);
+  }
+  .gradient3 {
+    //    .gradient3Gen(@color-ui-bg);
+  }
+  .gradient4 {
+    //    .gradient4Gen(@color-button-bg);
+  }
+
+  /**********************************************************
+    MASTHEAD
+  **********************************************************/
+  #header {
+    display: block;
+    left: 0px;
+    right: 0px;
+    height: 48px;
+    z-index: 250;
+    .gradient1;
+    //border-bottom: 1px solid darken(@color-2, 20%);
+    border-color: lighten(@color-header-navbar-bg, 20%) transparent darken(@color-header-navbar-bg, 20%) transparent;
+    -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    background-color: @color-header-navbar-bg;
+  }
+  /*Masthead box */
+  #header  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .headerMixin(@color) {
+  }
+  .headerMixin(@color) when (lightness(@color-ui-text) >= 50%) {
+    text-shadow: 0 -1px fadeout(darken(@color-ui-text, 100%), 50%);
+  }
+  .headerMixin(@color) when (lightness(@color-ui-text) < 50%) {
+    text-shadow: 0 1px fadeout(lighten(@color-ui-text, 100%), 50%);
+  }
+
+  #header  h1 {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 48px;
+    line-height: 44px !important;
+    text-align: center !important;
+    z-index: 1;
+    color: @color-header-navbar-text;
+    white-space: nowrap;
+    .headerMixin(@color-ui-text);
+  }
+  /* Masthead text */
+
+  /**********************************************************
+    CONTENT AREA
+  **********************************************************/
+  #content {
+    position: absolute;
+    top: 48px;
+    bottom: 62px;
+    left: 0px;
+    right: 0px;
+    display: block;
+    z-index: 180;
+    overflow: hidden;
+  }
+  /* Accounts for positioning of the content area, which is everything below the masthead/header and above the navbar. */
+
+  .panel {
+    -webkit-backface-visibility: hidden;
+    display: none;
+    z-index: 180;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-overflow-scrolling: touch;
+    -ms-touch-action: auto !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+    background: @color-bg;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-perspective: 1000;
+  }
+  .panel > * {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+
+  /**********************************************************
+    NAV BAR
+  **********************************************************/
+  #navbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 62px;
+    padding: 0 1px;
+    .gradient2;
+    //border-top: 1px solid lighten(@color-2, 20%);
+    border-color: lighten(@color-header-navbar-bg, 20%) transparent darken(@color-header-navbar-bg, 20%) transparent;
+    -webkit-box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.4);
+    text-align: center !important;
+    background-color: @color-header-navbar-bg;
+  }
+
+  .navbarAMixin(@color) {
+  }
+  .navbarAMixin(@color) when (lightness(@color-header-navbar-text) >= 50%) {
+    text-shadow: 0 -1px fadeout(darken(@color-header-navbar-text, 100%), 50%);
+  }
+  .navbarAMixin(@color) when (lightness(@color-header-navbar-text) < 50%) {
+    text-shadow: 0 1px fadeout(lighten(@color-header-navbar-text, 100%), 50%);
+  }
+
+  #navbar a {
+    position: relative;
+    width: 62px;
+    height: 60px;
+    display: inline-block;
+    margin: 0px auto;
+    font: normal 11px/102px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: @color-header-navbar-text;
+    text-align: center;
+    .navbarAMixin(@color-header-navbar-text);
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+
+  }
+
+  .navbarAActiveMixin(@color) {
+  }
+  .navbarAActiveMixin(@color) when (lightness(@color-navbar-selected) >= 20%) {
+    background-color: fadeout(darken(@color-navbar-selected, 15%), 30%);
+  }
+  .navbarAActiveMixin(@color) when (lightness(@color-navbar-selected) < 20%) {
+    background-color: fadeout(lighten(@color-navbar-selected, 15%), 30%);
+  }
+
+  #navbar a:active, #navbar a:focus, #navbar a:active:focus, #navbar a.selected {
+    .navbarAActiveMixin(@color-navbar-selected);
+  }
+
+  #navbar a:not(:last-of-type) {
+    border-right: 1px solid darken(@color-navbar-selected, 25%);
+    box-shadow: -1px 0 0 lighten(@color-navbar-selected, 15%) inset;
+  }
+
+  #navbar .icon:before {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+  }
+
+  .jq-badge {
+    -webkit-box-direction: reverse;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background: red;
+    border: 2px solid white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .65);
+    font: normal 12px/18px Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 -1px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    z-index: 100;
+  }
+  .jq-badge.br {
+    top: auto;
+    bottom: 2px;
+    left: auto;
+    right: 2px;
+  }
+  .jq-badge.bl {
+    -webkit-box-direction: normal !important;
+    top: auto;
+    bottom: 2px;
+    left: 2px;
+    right: auto;
+  }
+  .jq-badge.tl {
+    -webkit-box-direction: normal !important;
+    top: 2px;
+    bottom: auto;
+    left: 2px;
+    right: auto;
+  }
+  li .jq-badge {
+    right: 32px !important;
+  }
+
+  footer, header, nav {
+    display: none;
+  }
+  /* Custom footers - always hidden */
+  /* Show the active header/footer/navs */
+  navbar footer, #menu nav, #header header {
+    display: block;
+  }
+
+  /**********************************************************
+    SIDE-SLIDING MENU
+  **********************************************************/
+  .hasMenu {
+    position: absolute !important;
+    left: 0px !important;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+  }
+  /*menu on/off mechanism, note .hasMenu.off and #menu.on default to no transform*/
+  .hasMenu.to-on {
+    -webkit-transition: -webkit-transform 150ms;
+    transition: transform 150ms;
+  }
+  .hasMenu.on, .hasMenu.to-on {
+    -webkit-transform: translate3d(200px, 0px, 0px);
+    transform: translate(200px, 0px);
+  }
+  .hasMenu.to-off {
+    -webkit-transition: -webkit-transform 150ms;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transition: transform 150ms;
+    transform: translate(0px, 0px);
+  }
+  #menu.on {
+    -webkit-transform: none;
+    -webkit-transition: none;
+    transform: none;
+    transition: none;
+  }
+  #menu.to-on {
+    -webkit-transition: -webkit-transform 150ms;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transition: transform 150ms;
+    transform: translate(0px, 0px);
+  }
+  #menu.to-off {
+    -webkit-transition: -webkit-transform 150ms;
+    transition: transform 150ms;
+  }
+  #menu, #menu.off, #menu.to-off {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  #menu.on {
+    left: 0px !important;
+  }
+
+  .menuMixin(@color) {
+  }
+  .menuMixin(@color) when (lightness(@color-bg) >= 50%) {
+    background: darken(@color-bg, 20%);
+  }
+  .menuMixin(@color) when (lightness(@color-bg) < 50%) {
+    background: lighten(@color-bg, 20%);
+  }
+
+  #menu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    width: 200px;
+    height: 100%;
+    .menuMixin(@color-bg);
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+  }
+
+  #menu_scroller {
+    padding-bottom: 10px;
+    -webkit-backface-visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-touch-action: auto !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+  }
+
+  #menu > * {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .jqMenuHeader {
+    position: relative;
+    overflow: hidden;
+    margin: 6px auto;
+    font-family: @typeface-heading;
+    font-size: @size-font-heading;
+    font-weight: bold;
+    line-height: @size-leading-heading;
+    color: @color-ui-text;
+    .textShadowMixin(@color-ui-text);
+    text-align: center !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  /* Masthead text */
+
+  .jqMenuClose {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  #menu .title {
+    margin: 12px 0 3px;
+    font-size: 16px;
+    color: @color-ui-text;
+    font-weight: bold;
+  }
+
+  #menu ul {
+    margin-bottom: 5px;
+  }
+
+  #menu ul > li {
+    padding-left: 10px;
+    display: block;
+    width: 100%;
+    height: 28px;
+    list-style: none;
+    background: inherit;
+  }
+  /* A plain, non-interactive list item--best suited to a heading. */
+
+  .menuBGMixin(@bgcolor) when (lightness(@bgcolor)<20) {
+    border-color: lighten(@bgcolor, 20%) lighten(@bgcolor, 10%) darken(@bgcolor, 5%) lighten(@bgcolor, 10%);
+    background: lighten(@bgcolor, 10%);
+  }
+  .menuBGMixin(@bgcolor) when (lightness(@bgcolor)>=20) {
+    border-color: darken(@bgcolor, 10%) darken(@bgcolor, 15%) darken(@bgcolor, 25%) darken(@bgcolor, 15%);
+    background: darken(@bgcolor, 10%);
+  }
+  #menu ul > li > a {
+    display: block;
+    width: 100%;
+    height: 28px;
+    margin-left: -10px;
+    font-family: @typeface-text;
+    font-weight: normal;
+    font-size: @size-font-text;
+    line-height: 25px;
+    padding-left: 6px;
+    color: @color-general-text;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    .menuBGMixin(@color-bg);
+  }
+
+  #menu ul > li > a:after {
+    content: "";
+  }
+
+  .menuulSelectedMixin (@color) when (lightness(@color)<80%) {
+    background: lighten(@color, 20%);
+  }
+  .menuulSelectedMixin (@color) when (lightness(@color)>=80%) {
+    background: darken(@color, 20%);
+  }
+  .menuulSelectedMixin(@color) {
+  }
+
+  #menu ul > li >a.selected, ul > li.selected { .menuulSelectedMixin(@color-bg);
+    border-color: @color-ui-text;
+  }
+
+  /**********************************************************
+      BUTTON STYLES
+  **********************************************************/
+  .buttonBorderMixin(@color) {
+  }
+  .buttonBorderMixin(@color) when (lightness(@color-button-bg)>=20%) {
+    border: 1px solid darken(@color-button-bg, 25%);
+  }
+  .buttonBorderMixin(@color) when (lightness(@color-button-bg)<20%) {
+    border: 1px solid lighten(@color-button-bg, 25%);
+  }
+
+  .buttonTextMixin(@color) {
+  }
+  .buttonTextMixin(@color) when (lightness(@color-button-bg)>=50%) {
+    color: darken(@color-button-bg, 85%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  }
+  .buttonTextMixin(@color) when (lightness(@color-button-bg)<50%) {
+    color: lighten(@color-button-bg, 85%);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+  }
+
+  .button {
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    min-width: 60px;
+    padding: 0px 8px;
+    margin: 6px;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-border-radius: @the-radius;
+    border-radius: @the-radius;
+    background-color: @color-button-bg;
+    border: 1px solid @color-button-bg;
+    .buttonBorderMixin(@color-button-bg);
+    font-family: @typeface-text;
+    font-size: @size-font-text;
+    .buttonTextMixin(@color-button-bg);
+    font-weight: bold;
+    line-height: 34px;
+    text-decoration: none;
+    text-align: center;
+    text-overflow: ellipsis;
+    border-color: lighten(@color-button-bg, 20%) transparent darken(@color-button-bg, 20%) transparent;
+    color: @color-button-text;
+  }
+  /* Styling for CSS-generated buttons, including the back button. These buttons can bue used anywhere in the UI. */
+
+  .buttonSelBorderMixin(@color) {
+  }
+  .buttonSelBorderMixin(@color) when (lightness(@color-button-bg)>=90%) {
+    border: 1px solid darken(@color-button-bg, 40%);
+  }
+  .buttonSelBorderMixin(@color) when (lightness(@color-button-bg)<90%) {
+    border: 1px solid lighten(@color-button-bg, 40%);
+  }
+
+  .button.selected {
+    .buttonSelBorderMixin(@color-button-bg);
+    .gradient4;
+  }
+  /* Behavior of button for touch interaction. */
+
+  #backButton {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    max-width: 60px;
+    text-overflow: ellipsis;
+  }
+  /* Sets up positioning of the back button which appears in the header */
+
+  #backButton > div {
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* sets up sizing and handling of excess text for the type in the back button */
+
+  .menuButton {
+    position: relative;
+    width: 48px;
+    height: 100%;
+    padding: 12px 12px;
+    border-left: 1px solid darken(@color-button-bg, 25%);
+    box-shadow: 1px 0 0 lighten(@color-button-bg, 15%) inset;
+    background-color: transparent;
+    display: inline-block;
+    color: @color-button-text;
+  }
+
+  .menuButtonActiveMixin(@color) {
+  }
+  .menuButtonActiveMixin(@color) when (lightness(@color-button-bg)>=20%) {
+    background-color: fadeout(darken(@color-button-bg, 15%), 30%);
+  }
+  .menuButtonActiveMixin(@color) when (lightness(@color-button-bg)<20%) {
+    background-color: fadeout(lighten(@color-button-bg, 15%), 30%);
+  }
+  .menuButton:active { .menuButtonActiveMixin(@color-button-bg) }
+
+  .menuButton:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    border-radius: 20px;
+    background: @color-ui-text;
+    box-shadow: 0 9px 0 @color-ui-text;
+  }
+  .menuButton:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 50%;
+    height: 4px;
+    border-radius: 20px;
+    background: @color-ui-text;
+  }
+
+  .modalbutton {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    width: 58px;
+    height: 32px;
+    line-height: 32px;
+    z-index: 9999;
+  }
+
+  .closebutton {
+    position: relative;
+    float: right;
+    top: 6px;
+    right: 6px;
+    display: block;
+    height: 24px !important;
+    width: 24px !important;
+    border-radius: 12px;
+    border: 1px solid #666;
+    background: #fff;
+    color: #333;
+    font: bold 21px/18px 'Arial Black', Arial Black, Gadget, Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  .closebutton:before {
+    content: 'x';
+  }
+  .closebutton.selected, .closebutton.modalButton.selected {
+    color: #fff;
+    background: #333;
+  }
+
+  /**********************************************************
+    LIST NAV AND ITEMS
+  **********************************************************/
+  ul {
+  }
+
+  ul > li {
+    display: block;
+    width: 100%;
+    height: 48px;
+    list-style: none;
+    background: @color-ui-bg;
+  }
+  /* A plain, non-interactive list item--best suited to a heading. */
+
+  ul > li > a {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lighten(@color-ui-bg, 20%) transparent darken(@color-ui-bg, 20%) transparent;
+    padding-left: 8px;
+    font-family: @typeface-heading;
+    font-weight: bold;
+    font-size: @size-font-heading * .75;
+    line-height: 48px;
+    color: @color-ui-text;
+    text-decoration: none;
+    .textShadowMixin(@color-ui-text);
+
+  }
+  /* A touchable, interactive list item. */
+
+  ul > li > a:after {
+    content: ">";
+    position: absolute;
+    font-size: @size-font-heading;
+    right: 15px;
+  }
+  ul > li > a[selected], ul > li > a:active {
+  }
+  /* A selected and active states for interactive list items. */
+
+  ul > li >a.selected, ul > li.selected { .gradient3;
+  }
+
+  h2 {
+    display: block;
+    width: 100%;
+    height: 48px;
+    font-family: @typeface-heading;
+    font-weight: bold;
+    font-size: @size-font-heading * .75;
+    line-height: 48px;
+    padding: 0px 8px;
+    color: @color-ui-text;
+    .textShadowMixin(@color-ui-text);
+    background: @color-ui-bg;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lighten(@color-ui-bg, 25%) transparent darken(@color-ui-bg, 25%) transparent;
+  }
+  /* Header class used for non-navigable header bars (h1 is reserved for the header) */
+
+  h2[selected] {
+  }
+  /* A selected and active states for interactive list items. */
+  h2.selected { .gradient3;
+  }
+
+  .collapsed:after {
+    float: right;
+    content: '';
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 13px solid @color-ui-text;
+    display: block;
+    position: absolute;
+    top: 19px;
+    right: 12px;
+  }
+  /*	.collapsed:before {
+          display:none;
+          float:right;
+          content:'';
+          color:transparent;
+          background:transparent;
+          width:30px; height:30px;
+          display: block;
+          border:1px solid @color-ui-text;
+          border-radius:18px;
+          position:absolute;
+          top:8px; right:5px;
+      }*/
+  .expanded:after {
+    float: right;
+    content: '';
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 13px solid @color-ui-text;
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 12px;
+  }
+  /*	.expanded:before {
+          display:none;
+          float:right;
+          content:'';
+          color:transparent;
+          background:transparent;
+          width:30px; height:30px;
+          display:block;
+          border:1px solid @color-ui-text;
+          border-radius:18px;
+          position:absolute;
+          top:8px; right:5px;
+      }*/
+
+  /**********************************************************
+    MISCELLANEOUS UI ELEMENTS
+  **********************************************************/
+  #modalContainer {
+    width: 100%;
+  }
+  #modalContainer > * {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+  #jQui_modal {
+    display: none;
+    -webkit-backface-visibility: hidden;
+    z-index: 9999 !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    background: @color-bg !important;
+    -webkit-perspective: 1000;
+  }
+
+  .jqmScrollbar {
+    background-color: @color-general-text !important;
+  }
+  /* Sets the color of the scrollbar */
+
+  /**********************************************************
+    FORM ELEMENTS
+  **********************************************************/
+  fieldset h4 {
+    text-align: left;
+    font-family: @typeface-heading;
+    color: @color-ui-text;
+    font-weight: bold;
+    font-size: @size-font-heading * .75;
+    line-height: 21px;
+    margin-bottom: -8px;
+    margin-top: 8px;
+    .textShadowMixin(@color-ui-text);
+  }
+  /* Style for subhead for a group of labels/inputs within a fieldset. */
+
+  fieldset {
+    margin: 12px 8px;
+    padding: 12px 18px 12px 18px;
+    -webkit-border-radius: @the-radius;
+    border-radius: @the-radius;
+    border: 1px solid @color-form-border;
+    outline: 0;
+    width: 95%;
+  }
+  fieldset p {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 10px;
+    background: transparent;
+    height: 37px !important;
+    -webkit-box-shadow: none;
+  }
+  /* The paragraph within a fieldset is used as a wrapper to help manage the replacement of native input elements. */
+
+  legend {
+    margin: 0;
+    font-family: @typeface-text;
+    font-size: @size-font-text * 1.25;
+    font-weight: bold;
+    overflow: hidden;
+    color: @color-general-text;
+    text-transform: uppercase;
+  }
+  /* This is the name that appears at the top left of the fieldset. */
+
+  textarea.jq-ui-forms {
+    display: block;
+    margin: 4px 0 18px;
+    padding: 8px;
+    border: solid 1px @color-form-border;
+    outline: 0;
+    color: @color-general-text;
+    background: @color-bg;
+    -webkit-border-radius: @the-radius;
+    border-radius: @the-radius;
+    -webkit-box-shadow: inset 2px 2px 6px fadeout(darken(@color-bg, 50%), 70%);
+    box-shadow: inset 2px 2px 6px fadeout(darken(@color-bg, 50%), 70%);
+    width: 85%;
+    min-height: 150px;
+    line-height: 120%;
+
+  }
+  /* These properties determine the look of textarea inputs. */
+
+  input.jq-ui-forms {
+    display: inline-block;
+    width: 65%;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: solid 1px @color-form-border;
+    outline: 0;
+    color: @color-general-text;
+    background: @color-bg;
+    -webkit-border-radius: @the-radius;
+    border-radius: @the-radius;
+    -webkit-box-shadow: inset 2px 2px 6px fadeout(darken(@color-bg, 50%), 70%);
+    box-shadow: inset 2px 2px 6px fadeout(darken(@color-bg, 50%), 70%);
+
+  }
+  /* These properties combine to create the look of the input fields. */
+
+  input.jq-ui-forms:hover, textarea:hover, input.jq-ui-forms:focus, textarea:focus {
+    border-color: @color-form-focus-border;
+  }
+  /* Changes the border color of the input field while active. */
+
+  input.jq-ui-forms[type=checkbox], input.jq-ui-forms[type=radio] {
+    position: absolute;
+    left: 0;
+    -webkit-appearance: none;
+    opacity: 0;
+    margin-bottom: 30px;
+    width: 0px;
+  }
+  /* Blocks rendering of the native radio controls. */
+
+  input.jq-ui-forms[type=checkbox] + label, input.jq-ui-forms[type=radio] + label {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 26px; /* changing this value will change the vertical relationship to the radios & checkboxes. */
+    margin-left: 10px;
+    padding-left: 30px;
+    background: url(data:image/png;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA5wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOgAAAAAAgAAAAAAAABkAAAA6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlAAAAYwAAAAAEAAAAAF5eXrYAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf///wBNTU1JAAAAnQAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADnAAAAY7Ozs7cCAAAAAAAAAJ0AAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkAAACdAAAAAAIAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAADnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAACAAAAAAAAAGQAAADoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOUAAABjAAAAAAQAAAAAXl5etgAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB////AE1NTUkAAACdAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOcAAABjs7OztwIAAAAAAAAAnQAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQAAAJ0AAAAAAgAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAOcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoAAAAAAIAAAAAAAAAZAAAAOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5QAAAGMAAAAABAAAAABeXl62AAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH///8AMDAwou/v713+/v4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICABEREaPQ0NBeAf///wAfHx///v7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAOHh4QECAAAAAP7+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+/v4AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKampgCnp6cAAAAAAP///wCRkZEAycnJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKampgAAAAAA+vr6AMDAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKampgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAOcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoAAAAAAIAAAAAAAAAZAAAAOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5QAAAGMAAAAABAAAAABeXl62AAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmpqYAAAAAAPr6+gDAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmpqYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA5wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOgAAAAAAgAAAAAAAABkAAAA6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlAAAAYwAAAAAEAAAAAF5eXrYAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf///wAwMDCi7+/vXf7+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIAERERo9DQ0F4B////AB8fH//+/v4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIA4eHhAQIAAAAA/v7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7+/gAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1dXQBxcXEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFRUUAg4ODAAMDAwAAAAAAj4+PAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMTExAJWVlQADAwMAAAAAAHJycgBxcXEAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIACfn58ACQkJAAAAAAAAAAAAAAAAAAkJCQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHFxcQBxcXEAAAAAAAAAAAAAAAAAAAAAAAAAAAATExMAo6OjABMTEwAAAAAAAAAAAAAAAACvr68Ah4eHAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAABxcXEAcnJyAAAAAAAAAAAAj4+PAAAAAAAAAAAACQkJAJ+fnwAgICAAAAAAAAAAAAAAAAAAvLy8AHNzcwD///8AAAAAAAAAAAAAAAAAAAAAAAD///8AHBwc/xwcHP8cHBz/jY2N//////////////////////+NjY3/HBwc/x8fH/+6urr//////////////////////87Ozv8lJSX/HBwc/xwcHP8cHBz/HBwc/xwcHP////8ABAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAHJycgAAAAAAERERAEVFRQAAAAAAAAAAAAAAAADa2toAYWFhAPf39wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB////AB0dHf8AAAAAAAAAAAAAAABycnIAcXFxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5+fnAE9PTwDn5+cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4+PjAQIAAAAAAAAAAAAAAAAAAAAAAAAAAI6OjgCPj48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO7u7gBeXl4A5+fnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6OjgCPj48AAAAAAAAAAAAAAAAAAAAAAAAAAAD39/cAYGBgANjY2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6OjgCPj48AAAAAAAAAAAAAAAAA/Pz8AGtrawDPz88AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6OjgCPj48AAAAAAP///wBycnIAu7u7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI6OjgAAAAAA+fn5AK+vrwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB////AB0dHf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4+PjAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAAAAAAACAAAAABEREaUCAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDAwARERGlAAAAAAH///8Aq6urAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVVVUAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB////AE1NTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABCAAAAUgAAADkAAAAgAAAAEAAAAPAAAADgAAAAxwAAAK4AAAC+AAAA/gAAAAAAAAAAAAAAAAAAAAAAAAAAs7OzAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMAAAAiQAAACoAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADAAAAAwAAAAaQAAANYAAAB3AAAAtAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAmAAAALMAAAAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKgAAALMAAACZAAAABgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABgAAALEAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGYAAAAeAAAATwAAAPoAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAACUAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAACVAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAASwAAAGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQAAABMAAAAAAAAAAACAAAAAAAAAAIAAACJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoAAAACAAAAAAIAAAAAAAAAQgAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKQAAAEMAAAAAAgAAAAAAAABSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAAACAAAAAAAAADoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5AAAAAAIAAAAAAAAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAAACAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxAAAAAAIAAAAAAAAA4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAAAAgAAAAAAAADHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAACAAAAAAAAAK0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACvAAAAAAIAAAAAAAAAvgAAANcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1wAAALwAAAAAAgAAAAAAAAD+AAAAdgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3AAAA/gAAAAACAAAAAAAAAAAAAAC0AAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnQAAALMAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAABrAAAAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALkAAABqAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAPoAAABPAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACdAAAATgAAAPoAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAPoAAABlAAAATQAAANcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADXAAAATQAAAGQAAAD6AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0AAAAtgAAAEMAAABSAAAAOQAAACEAAAAOAAAA8gAAAN8AAADHAAAArgAAAL0AAAD+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABeXl4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+AAAAuwAAALsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH///8ATU1NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAEIAAABSAAAAOQAAACAAAAAQAAAA8AAAAOAAAADHAAAArgAAAL4AAAD+AAAAAAAAAAAAAAAAAAAAAAAAAACzs7MABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwAAACJAAAAKgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAMAAAADAAAABpAAAA1gAAAHcAAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAYAAACYAAAAswAAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqAAAAswAAAJkAAAAGAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAGAAAAsQAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZgAAAB4AAABPAAAA+gAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAJQAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAJUAAAAAAAAAAAAAAAACAAAAAAAAAAAAAABLAAAAZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZAAAAEwAAAAAAAAAAAIAAAAAAAAAAgAAAIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAigAAAAIAAAAAAgAAAAAAAABCAAAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApAAAAQwAAAAACAAAAAAAAAFIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAAAIAAAAAAAAAOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkAAAAAAgAAAAAAAAAfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAIAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPEAAAAAAgAAAAAAAADhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3wAAAAACAAAAAAAAAMcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAAAIAAAAAAAAArQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK8AAAAAAgAAAAAAAAC+AAAA1wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADXAAAAvAAAAAACAAAAAAAAAP4AAAB2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHcAAAD+AAAAAAIAAAAAAAAAAAAAALQAAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACdAAAAswAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAGsAAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuQAAAGoAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA+gAAAE8AAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ0AAABOAAAA+gAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA+gAAAGUAAABNAAAA1wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANcAAABNAAAAZAAAAPoAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALQAAAC2AAAAQwAAAFIAAAA5AAAAIQAAAA4AAADyAAAA3wAAAMcAAACuAAAAvQAAAP4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAF5eXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP4AAAC7AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf///wBNTU0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQgAAAFIAAAA5AAAAIAAAABAAAADwAAAA4AAAAMcAAACuAAAAvgAAAP4AAAAAAAAAAAAAAAAAAAAAAAAAALOzswAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAIkAAAAqAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAwAAAAMAAAAGkAAADWAAAAdwAAALQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABgAAAJgAAACzAAAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoAAACzAAAAmQAAAAYAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAYAAACxAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAAAHgAAAE8AAAD6AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAlAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAlQAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEsAAABlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkAAAATAAAAAAAAAAAAgAAAAAAAAACAAAAiQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKAAAAAgAAAAACAAAAAAAAAEIAAAArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACkAAABDAAAAAAIAAAAAAAAAUgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAAAAAgAAAAAAAAA6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQAAAAACAAAAAAAAAB8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAgAAAAAAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8QAAAAACAAAAAAAAAOEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADfAAAAAAIAAAAAAAAAxwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMgAAAAAAgAAAAAAAACtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAAACAAAAAAAAADoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5AAAAAAIAAAAAAAAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAAACAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxAAAAAAIAAAAAAAAA4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAAAAgAAAAAAAADHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAACAAAAAAAAAK0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACvAAAAAAIAAAAAAAAAvgAAANcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1wAAALwAAAAAAgAAAAAAAAD+AAAAdgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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) 0 0px no-repeat;
+    background-repeat: none;
+    height: 25px;
+  }
+  /* Styling for the labels. */
+
+  /* Following block of paragraph classes sets up the usage of the custom radio and checkbox graphics. */
+  input.jq-ui-forms[type=radio] + label {
+    background-position: 0 -225px;
+  }
+  input.jq-ui-forms[type=checkbox] + label {
+    background-position: 0 -25px;
+  }
+
+  /* Styles for "checked." */
+  input.jq-ui-forms[type=radio]:checked + label {
+    background-position: 0 -300px;
+  }
+  input.jq-ui-forms[type=radio]:hover:checked + label,
+  input.jq-ui-forms[type=radio]:focus:checked + label,
+  input.jq-ui-forms[type=radio]:checked + label:hover,
+  input.jq-ui-forms[type=radio]:focus:checked + label {
+    background-position: 0 -300px;
+  }
+
+  input.jq-ui-forms[type=checkbox]:checked + label {
+    background-position: 0 -100px;
+  }
+  input.jq-ui-forms[type=checkbox]:hover:checked + label,
+  input.jq-ui-forms[type=checkbox]:focus:checked + label,
+  input.jq-ui-forms[type=checkbox]:checked + label:hover,
+  input.jq-ui-forms[type=checkbox]:focus:checked + label {
+    background-position: 0 -100px;
+  }
+
+  /* Styles for "hover/focus." */
+  input.jq-ui-forms[type=checkbox]:hover + label,
+  input.jq-ui-forms[type=checkbox]:focus + label,
+  input.jq-ui-forms[type=checkbox] + label:hover {
+    background-position: 0 -0x;
+  }
+
+  input.jq-ui-forms[type=radio]:hover + label,
+  input.jq-ui-forms[type=radio]:focus + label,
+  input.jq-ui-forms[type=radio] + label:hover {
+    background-position: 0 -200px;
+  }
+
+  /* Styles for "active." */
+  input.jq-ui-forms[type=checkbox]:active + label,
+  input.jq-ui-forms[type=checkbox] + label:hover:active {
+    background-position: 0 -0px;
+  }
+
+  input.jq-ui-forms[type=radio]:active + label,
+  input.jq-ui-forms[type=radio] + label:hover:active {
+    background-position: 0 -200px;
+  }
+
+  input.jq-ui-forms[type=checkbox]:active:checked + label,
+  input.jq-ui-forms[type=checkbox]:checked + label:hover:active {
+    background-position: 0 -100px;
+  }
+
+  input.jq-ui-forms[type=radio]:active:checked + label,
+  input.jq-ui-forms[type=radio]:checked + label:hover:active {
+    background-position: 0 -300px;
+  }
+
+  /* Styles for "disabled." */
+  input.jq-ui-forms[type=checkbox]:disabled + label,
+  input.jq-ui-forms[type=checkbox]:hover:disabled + label,
+  input.jq-ui-forms[type=checkbox]:focus:disabled + label,
+  input.jq-ui-forms[type=checkbox]:disabled + label:hover,
+  input.jq-ui-forms[type=checkbox]:disabled + label:hover:active {
+    background-position: 0 -175px;
+    opacity: .5 !important;
+  }
+
+  input.jq-ui-forms[type=radio]:disabled + label,
+  input.jq-ui-forms[type=radio]:hover:disabled + label,
+  input.jq-ui-forms[type=radio]:focus:disabled + label,
+  input.jq-ui-forms[type=radio]:disabled + label:hover,
+  input.jq-ui-forms[type=radio]:disabled + label:hover:active {
+    background-position: 0 -250px;
+    opacity: .5 !important;
+  }
+
+  input.jq-ui-forms[type=checkbox]:disabled:checked + label,
+  input.jq-ui-forms[type=checkbox]:hover:disabled:checked + label,
+  input.jq-ui-forms[type=checkbox]:focus:disabled:checked + label,
+  input.jq-ui-forms[type=checkbox]:disabled:checked + label:hover,
+  input.jq-ui-forms[type=checkbox]:disabled:checked + label:hover:active {
+    background-position: 0 -200px;
+    opacity: .5 !important;
+  }
+
+  input.jq-ui-forms[type=radio]:disabled:checked + label,
+  input.jq-ui-forms[type=radio]:hover:disabled:checked + label,
+  input.jq-ui-forms[type=radio]:focus:disabled:checked + label,
+  input.jq-ui-forms[type=radio]:disabled:checked + label:hover,
+  input.jq-ui-forms[type=radio]:disabled:checked + label:hover:active {
+    background-position: 0 -375px;
+    opacity: .5 !important;
+  }
+
+  input.jq-ui-forms[type=radio]:active:checked + label,
+  input.jq-ui-forms[type=checkbox]:active:checked + label,
+  input.jq-ui-forms[type=radio]:active + label,
+  input.jq-ui-forms[type=checkbox]:active + label,
+  input.jq-ui-slider[type=checkbox]:checked + label,
+  input.jq-ui-slider[type=radio]:checked + label {
+    background-position: -28px 0px;
+  }
+
+  /**********************************************************
+    SLIDER CONTROL
+  **********************************************************/
+  input.jq-ui-slider {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    display: none;
+  }
+  /* Blocks rendering of the native radio controls. */
+
+  input.jq-ui-slider + label {
+    float: left;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 24px; /* changing this value will change the vertical relationship to the radios & checkboxes. */
+    margin-left: 10px;
+    padding-left: 57px;
+    color: #fff;
+    background-image: url(data:image/png;base64,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);
+    height: 24px;
+    width: 57px;
+    display: inline-block;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+
+  input.jq-ui-slider[type=radio]:disabled:checked + label,
+  input.jq-ui-slider[type=radio]:focus:disabled:checked + label,
+  input.jq-ui-slider[type=checkbox]:disabled:checked + label,
+  input.jq-ui-slider[type=checkbox]:focus:disabled:checked + label {
+    background-position: -29px 0px;
+    opacity: .7 !important;
+  }
+
+  /* Styles for "disabled." */
+  input.jq-ui-slider[type=checkbox]:disabled + label,
+  input.jq-ui-slider[type=checkbox]:focus:disabled + label,
+  input.jq-ui-slider[type=radio]:disabled + label,
+  input.jq-ui-slider[type=radio]:focus:disabled + label {
+    background-position: 0 0;
+    opacity: .7 !important;
+  }
+
+  select[disabled]~div {
+    opacity: .7;
+  }
+
+  /**********************************************************
+    ACTION SHEET
+  **********************************************************/
+  #jq_actionsheet {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    margin: auto;
+    float: left;
+    z-index: 9999;
+    background: fadeout(@color-ui-bg, 5%);
+    border-top: 1px solid lighten(@color-ui-bg, 20%);
+    box-shadow: 0 0 12px rgba(0, 0, 0, .5);
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+
+  .actionMixin(@color) {
+  }
+  .actionMixin(@color) when (lightness(@color-button-bg)>=20%) {
+    border: 1px solid darken(@color-button-bg, 25%);
+  }
+  .actionMixin(@color) when (lightness(@color-button-bg)<20%) {
+    border: 1px solid lighten(@color-button-bg, 25%);
+  }
+
+  .actionTextMixin(@color) {
+  }
+  .actionTextMixin(@color) when (lightness(@color-button-bg)>=50%) {
+    color: darken(@color-button-bg, 85%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  }
+  .actionTextMixin(@color) when (lightness(@color-button-bg)<50%) {
+    color: lighten(@color-button-bg, 85%);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+  }
+
+  #jq_actionsheet a {
+    display: block;
+    height: 36px;
+    width: 300px;
+    padding: 0 12px;
+    margin: 0 auto 12px;
+    -webkit-border-radius: @the-radius;
+    border-radius: @the-radius;
+    background-color: @color-button-bg;
+    .actionMixin(@color-button-bg);
+    font-family: @typeface-heading;
+    font-size: @size-font-heading;
+    .actionTextMixin(@color-button-bg);
+    line-height: 34px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+
+  .actionSelBorderMixin(@color) {
+  }
+  .actionSelBorderMixin(@color) when (lightness(@color-button-bg)>=90%) {
+    border: 1px solid darken(@color-button-bg, 40%);
+  }
+  .actionSelBorderMixin(@color) when (lightness(@color-button-bg)<90%) {
+    border: 1px solid lighten(@color-button-bg, 40%);
+  }
+
+  #jq_actionsheet a.selected {
+    .actionSelBorderMixin(@color-button-bg);
+    .gradient4;
+  }
+
+  #jq_actionsheet a.cancel {
+    background-color: red;
+    border-color: maroon;
+    color: white;
+    .textShadowMixin(white);
+  }
+  #jq_actionsheet a.cancel.selected {
+    border-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, red), color-stop(100%, maroon));
+    background-image: -webkit-linear-gradient(top, color-stop(0%, red), color-stop(100%, maroon));
+    background-image: linear-gradient(to bottom, color-stop(0%, red), color-stop(100%, maroon));
+  }
+
+  /**********************************************************
+    POPUP
+  **********************************************************/
+
+  .popupBorderMixin(@color) {
+  }
+  .popupBorderMixin(@color) when (lightness(@color-form-border) >= 80%) {
+    border: solid 1px darken(@color-form-border, 25%);
+  }
+  .popupBorderMixin(@color) when (lightness(@color-form-border) < 80%) {
+    border: solid 1px lighten(@color-form-border, 25%);
+  }
+
+  .jqPopup {
+    float: left;
+    display: block;
+    position: absolute;
+    width: 300px;
+    z-index: 1000000;
+    margin: auto !important;
+    padding: 12px;
+    background: @color-form-border;
+    .popupBorderMixin(@color-form-border);
+    box-shadow: 0 0 18px fadeout(@color-bg, 20%);
+    border-radius: @the-radius;
+    font-family: @typeface-heading;
+    color: @color-ui-text;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .jqPopup.hidden {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+  }
+
+  .jqPopup header {
+    display: block !important;
+    font-size: @size-font-heading * .75;
+    line-height: @size-leading-heading * .75;
+    font-weight: bold;
+  }
+
+  .jqPopup div {
+    font-size: @size-font-text;
+    line-height: @size-leading-text * .75;
+    font-weight: normal;
+  }
+
+  .jqPopup footer {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .jqPopup footer a#cancel {
+    float: left;
+  }
+
+  .jqPopup footer a#action {
+    float: right;
+    margin-right: 4px;
+  }
+
+  .jqPopup footer a.center {
+    float: none !important;
+    width: 80%;
+    margin: 8px;
+  }
+
+  /** This can be your default scrollbar class. You must use !important to override the default inline styles */
+  .scrollBar {
+    position: absolute !important;
+    width: 5px !important;
+    height: 20px !important;
+    border-radius: 2px !important;
+    border: 1px solid black !important;
+    background: black !important;
+    opacity: 0 !important;
+  }
+  /* Since the styles are built in, you have to override values with !important */
+
+  .jqmobiSelectRowFound {
+  }
+  /* Row of selected item */
+  .jqmobiSelectRowButtonFound {
+  }
+  /* Button (radio) for the found item in the list */
+  .jqmobiSelectRow {
+  }
+  /* Row for items in the list */
+  .jqmobiSelectRowButton {
+  }
+  /* button for the items in the list */
+  .jqmobiSelectRowText {
+  }
+  /* class for the item text displayed */
+
+  #jqmobiSelectBoxHeader {
+  }
+  /* Header for select box */
+  #jqmobiSelectBoxFix {
+  }
+  /* div that holds the options listed*/
+
+}
+
+@media handheld, only screen and (min-width: 768px) {
+  #jQUi {
+    .hasMenu, .hasMenu.on {
+      position: absolute !important;
+      left: 256px !important;
+      -webkit-transition: all 0ms !important;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate(0px, 0px);
+      transition: all 0ms !important;
+    }
+
+    #badgephone {
+      display: none !important;
+    }
+    #badgetablet {
+      display: inline-block !important;
+    }
+    .jqMenuClose {
+      display: none !important;
+    }
+
+    nav~#menu {
+      z-index: 200 !important;
+      width: 256px !important;
+      height: 100% !important;
+      display: block !important;
+      position: absolute !important;
+      left: 0px !important;
+      background: @color-bg !important;
+      -webkit-transform: translate3d(0, 0, 0) !important;
+      -webkit-transition: none !important;
+      transform: translate(0px, 0px);
+      transition: none !important;
+    }
+    .hasMenu.to-on {
+      -webkit-transition: none !important;
+      transition: none !important;
+    }
+    .hasMenu.on, .hasMenu.to-on {
+      -webkit-transform: translate3d(0px, 0px, 0px) !important;
+      -webkit-transition: none !important;
+      transform: translate(0px, 0px);
+      transition: none !important;
+    }
+    .hasMenu.to-off {
+      -webkit-transform: translate3d(0px, 0px, 0px) !important;
+      -webkit-transition: none !important;
+      transform: translate(0px, 0px);
+      transition: none !important;
+    }
+  }
+
+}
+
+/* Additional global styles */
+/**********************************************************
+  LOAD SCREEN
+**********************************************************/
+#splashscreen {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  min-height: 100%;
+  background: @color-splashscreen-bg !important;
+  color: white !important;
+  font-size: 30px;
+  text-align: center;
+  z-index: 9999;
+  display: block;
+  margin: 0 auto !important;
+  padding-top: 80px !important;
+}
+
+.splashscreen {
+  background: @color-splashscreen-bg !important;
+  padding-left: 40px;
+  padding-top: 30px !important;
+  min-height: 100%;
+}
+
+.ui-icon {
+  background: rgba(0, 0, 0, .4);
+  background-repeat: no-repeat;
+  border-radius: 9px;
+}
+
+.ui-loader {
+  display: none;
+  position: absolute;
+  opacity: .85;
+  z-index: 100;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  margin-top: -35px;
+  padding: 10px 30px;
+  background: rgba(0, 0, 0, .4);
+  border-radius: 9px;
+}
+
+.ui-loader h1 {
+  font-size: 15px;
+  text-align: center;
+}
+
+.ui-loader .ui-icon {
+  position: static;
+  display: block;
+  opacity: .9;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+}
+
+#splashscreen .ui-icon {
+  display: inline-block;
+}
+
+.spin {
+  -webkit-transform: rotate(360deg);
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.ui-icon-loading {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjBAMAAADs965qAAAAA3NCSVQICAjb4U/gAAAAMFBMVEX////x8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHvvEhiAAAAEHRSTlMAESIzRFVmd4iZqrvM3e7/dpUBFQAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAEaSURBVCiRY2AgATCapaUqoIiIzN5z5syZJiQRltW7gUJ3705C6OraDRG6GwATkli1evdusNBTuKJVq3c4MjBX3733DqqMfdWqFWDbau+9ewIRspy5KgHMYL737g1EX+fMaVAjbN+9KwDLzZxZAHPMu3cXwEbNnAl397p3YDslOmD6GBjs/v8AURodzXAh3v+/QZRHRyNciPP/f4hQA1yIHVMICtzLC9CFzMuL0IXEy0vQhdjK0+BsRqgv0tIMYEKCggJgmbS0QJgiQUEIwy0tVQCmCCokmhYaCFMElWMKDQ01BIkoKcKEGFRDQ1yMlISUgEIwe5iAQi7GxkpKSjBFwMh2cXEGCSkiOVcFLIQswsAgZGxshCpCBgAA0FNYp5zwDegAAAAASUVORK5CYII=);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-size: 35px 35px;
+}
+
+.ui-corner-all {
+  border-radius: .6em;
+}
+
+body > div #mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#jQui_mask {
+  position: absolute;
+  top: 45%;
+}
