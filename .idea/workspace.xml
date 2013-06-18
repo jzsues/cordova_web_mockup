@@ -30,11 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="31" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.32868525">
-              <folding>
-                <marker date="1371520164000" expanded="false" signature="56887:56948" placeholder="..." />
-                <marker date="1371520164000" expanded="false" signature="94595:94620" placeholder="..." />
-              </folding>
+            <state line="271" column="9" selection-start="10320" selection-end="10320" vertical-scroll-proportion="0.33266932">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -336,9 +333,7 @@
     <entry file="file://$PROJECT_DIR$/kitchensink/jq.ui.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1013" column="57626" selection-start="87567" selection-end="87567" vertical-scroll-proportion="-1.7307693">
-          <folding>
-            <element signature="e#29957#87568#1" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -414,11 +409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="31" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.32868525">
-          <folding>
-            <marker date="1371520164000" expanded="false" signature="56887:56948" placeholder="..." />
-            <marker date="1371520164000" expanded="false" signature="94595:94620" placeholder="..." />
-          </folding>
+        <state line="271" column="9" selection-start="10320" selection-end="10320" vertical-scroll-proportion="0.33266932">
+          <folding />
         </state>
       </provider>
     </entry>
