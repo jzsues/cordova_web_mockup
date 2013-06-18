@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/grid.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/jq.ui.css" afterPath="$PROJECT_DIR$/css/jq.ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/jq.ui.less" afterPath="$PROJECT_DIR$/css/jq.ui.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/lessc/lessc.xml" afterPath="$PROJECT_DIR$/.idea/lessc/lessc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defer/today.html" afterPath="$PROJECT_DIR$/defer/today.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mockup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../jqmobi/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371482884847" ignored="false" />
-    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371529162999" ignored="false" />
+    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371532803480" ignored="false" />
     <file path="/cordova_detech_os.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371523474356" ignored="false" />
     <file path="/app.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371487166779" ignored="false" />
     <file path="/Dummy.txt" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371527152651" ignored="false" />
@@ -19,7 +19,8 @@
     <file path="/self.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371528489758" ignored="false" />
     <file path="/location.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371528494618" ignored="false" />
     <file path="/guess.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371528513694" ignored="false" />
-    <file path="/today.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371528523549" ignored="false" />
+    <file path="/today.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371532485978" ignored="false" />
+    <file path="/grid.css" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371532932507" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,37 +40,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="83" selection-start="518" selection-end="518" vertical-scroll-proportion="0.4368932">
-              <folding />
+            <state line="116" column="81" selection-start="4297" selection-end="4297" vertical-scroll-proportion="8.4">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="location.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/defer/location.html">
+      <file leaf-file-name="grid.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/grid.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="69" selection-end="69" vertical-scroll-proportion="-3.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="self.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/defer/self.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="69" selection-end="69" vertical-scroll-proportion="-3.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="guess.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/defer/guess.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="11" selection-start="0" selection-end="85" vertical-scroll-proportion="-5.0">
+            <state line="7" column="14" selection-start="156" selection-end="156" vertical-scroll-proportion="0.19961977">
               <folding />
             </state>
           </provider>
@@ -78,25 +63,7 @@
       <file leaf-file-name="today.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/defer/today.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="85" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jq.ui.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/jq.ui.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="1" selection-start="444" selection-end="444" vertical-scroll-proportion="-3.27451">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="external.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/external.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.0">
+            <state line="0" column="29" selection-start="29" selection-end="29" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -130,9 +97,10 @@
         <option value="$PROJECT_DIR$/defer/self.html" />
         <option value="$PROJECT_DIR$/defer/location.html" />
         <option value="$PROJECT_DIR$/defer/guess.html" />
-        <option value="$PROJECT_DIR$/defer/today.html" />
         <option value="$PROJECT_DIR$/css/jq.ui.less" />
+        <option value="$PROJECT_DIR$/defer/today.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/grid.css" />
       </list>
     </option>
   </component>
@@ -186,6 +154,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mockup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mockup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -213,6 +195,22 @@
       <option name="filePath" />
       <option name="scope" value="ALL" />
       <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -252,13 +250,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1280" height="713" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.49960223" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5003978" order="7" side_tool="true" content_ui="tabs" />
@@ -340,13 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/icons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/images/splash.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -410,13 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/jq.ui.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="444" selection-end="444" vertical-scroll-proportion="-3.27451">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/defer/guess.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="11" selection-start="0" selection-end="85" vertical-scroll-proportion="-5.0">
@@ -424,16 +408,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/icons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jq.ui.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="1" selection-start="444" selection-end="444" vertical-scroll-proportion="-19.891212">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/defer/today.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="85" vertical-scroll-proportion="0.0">
+        <state line="0" column="29" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="83" selection-start="518" selection-end="518" vertical-scroll-proportion="0.4368932">
+        <state line="116" column="81" selection-start="4297" selection-end="4297" vertical-scroll-proportion="8.4">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/grid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="14" selection-start="156" selection-end="156" vertical-scroll-proportion="0.19961977">
           <folding />
         </state>
       </provider>
