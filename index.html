@@ -26,26 +26,13 @@
     <script>
 
 
-
-
-
         $(document).ready(function () {
-            //鼠标模拟触摸滑动
-            if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
-                var script = document.createElement("script");
-                script.src = "plugins/jq.desktopBrowsers.js";
-                var tag = $("head").append(script);
-                if (!$.os.ie) {
-                    //	$.os.desktop=true;
-                    //	$.feat.nativeTouchScroll=true;
-                }
-            }
-            //alert("$(document).ready");
+
         });
 
 
     </script>
-
+    <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.debug.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.swipe.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.carousel.js"></script>
@@ -53,9 +40,11 @@
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.shake.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.alphatable.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.template.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./plugins/jq.scroller.js"></script>
-
-    <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./plugins/jq.iscroll.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/z.ui.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/refresh.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/refresh.iscroll.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/touch.js"></script>
 
     <script type="text/javascript">
         /* This function runs once the page is loaded, but appMobi is not yet active */
@@ -114,12 +103,105 @@
     </div>
 
     <div id="content">
-        <div id="today_panel" class="panel" selected="true" data-defer="defer/today.html" data-load="loadedPanel"
+        <div id="today_panel" class="panel" selected="true" data-load="loadedPanel"
              data-unload="unloadedPanel"
-             data-tab="navbar_today" data-header="header" style="">
+             data-tab="navbar_today" data-header="header">
+            <script>
+                $(document).ready(function () {
+                    var refresh = $('.ui-refresh');
+                    var h = window.innerHeight - ($('#header').height() || 42);
+                    console.log(h);
+                    refresh.css('height', h);
+                    refresh.refresh({
+                        ready: function (dir, type) {
+                            var me = this;
+                            setTimeout(function () {
+                                me.afterDataLoading(dir);    //数据加载完成后改变状态
+                            }, 3000);
 
+                        }
+                    });
+                });
+            </script>
+            <div id='today_content' class="ui-grid-container">
+                <div class="ui-refresh">
+                    <div class="ui-refresh-up"></div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-bar ui-bar-b">Block A</div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-bar ui-bar-b">Block B</div>
+                        </div>
+                    </div>
+                    <div class="ui-refresh-down"></div>
+                </div>
+            </div>
         </div>
-
         <div id="guess_panel" class="panel" data-load="loadedPanel" data-defer="defer/guess.html"
              data-unload="unloadedPanel"
              data-tab="navbar_guess" data-header="header">

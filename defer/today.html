@@ -1,90 +1,91 @@
-<div id='today_content' class="ui-grid-container">
-    <script>
-        var myScroller;
-        $.ui.ready(function () {
-            myScroller = $("#today_content").scroller();//Fetch the scroller from cache
-            //Since this is a jqUi scroller, we could also do
-            // myScroller=$.ui.scrollingDivs['webslider'];
-            myScroller.addInfinite();
-            myScroller.addPullToRefresh('<div class="ui-refresh-wrapper jqscroll_refresh"></div>');
-            $.bind(myScroller, 'scrollend', function () {
-                console.log("scroll end");
-            });
+<script>
+    $(document).ready(function () {
+        var refresh = $('.ui-refresh');
+        refresh.css('height', window.innerHeight - ($('header').height() || 42)).refresh({
+            ready: function (dir, type) {
+                var me = this;
+                setTimeout(function () {
+                    me.afterDataLoading(dir);    //数据加载完成后改变状态
+                }, 3000);
 
-            $.bind(myScroller, 'scrollstart', function () {
-                console.log("scroll start");
-            });
-            $.bind(myScroller, "refresh-trigger", function () {
-
-                this.setRefreshContent('<div class="ui-refresh"><div class="ui-refresh-up"><span class="ui-refresh-icon"></span><span class="ui-refresh-label">加载更多</span></div></div>');
-            });
-            var hideClose;
-            $.bind(myScroller, "refresh-release", function () {
-                var that = this;
-                this.setRefreshContent('<div class="ui-refresh"><div class="ui-refresh-loading"><span class="ui-loading"></span><span class="ui-refresh-label">加载中</span></div></div>');
-                clearTimeout(hideClose);
-                hideClose = setTimeout(function () {
-                    console.log("hiding manually refresh");
-                    that.hideRefresh();
-                }, 50000);
-                return false; //tells it to not auto-cancel the refresh
-            });
-
-            $.bind(myScroller, "refresh-cancel", function () {
-                clearTimeout(hideClose);
-                console.log("cancelled");
-            });
-            myScroller.enable();
-
-            $.bind(myScroller, "infinite-scroll", function () {
-                var self = this;
-                console.log("infinite triggered");
-
-                //$(this.el).append('<div class="ui-refresh"><div class="ui-refresh-down"><span class="ui-refresh-icon"></span><span class="ui-refresh-label">加载更多</span></div></div>');
-                $.bind(myScroller, "infinite-scroll-end", function () {
-                    myScroller.scrollToBottom();
-                    $.unbind(myScroller, "infinite-scroll-end");
-                    setTimeout(function () {
-                        $(self.el).find("#infinite").remove();
-                        self.clearInfinite();
-                    }, 3000);
-                });
-            });
-            $("#webslider").css("overflow", "auto");
+            }
         });
-    </script>
-
-
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
-            <div class="ui-bar ui-bar-b">Block A</div>
+    });
+</script>
+<div id='today_content' class="ui-grid-container">
+    <div class="ui-refresh">
+        <div class="ui-refresh-up"></div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-        <div class="ui-block-b">
-            <div class="ui-bar ui-bar-b">Block B</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-    </div>
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
-            <div class="ui-bar ui-bar-b">Block A</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-        <div class="ui-block-b">
-            <div class="ui-bar ui-bar-b">Block B</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-    </div>
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
-            <div class="ui-bar ui-bar-b">Block A</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-        <div class="ui-block-b">
-            <div class="ui-bar ui-bar-b">Block B</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-    </div>
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
-            <div class="ui-bar ui-bar-b">Block A</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
-        <div class="ui-block-b">
-            <div class="ui-bar ui-bar-b">Block B</div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Block A</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Block B</div>
+            </div>
         </div>
     </div>
 </div>
