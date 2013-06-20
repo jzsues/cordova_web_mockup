@@ -5,11 +5,46 @@
 
 .ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d {
     overflow: hidden;
-    height: 92px;
+    height: 190px;
+}
+.ui-grid-a img, .ui-grid-b img, .ui-grid-c img, .ui-grid-d img {
+    display: inline-block;
+    height: 120px;
+    vertical-align: middle;
+}
+ .ui-grid-title {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 24px;
+    line-height: 24px;
+}
+ .ui-grid-title .name{
+    white-space: nowrap;
+    text-align: center;
+    border-bottom:  1px solid rgba(51, 51, 51, 0.47);
+}
+.ui-grid-title .like{
+    float: left;
+    text-align: center;
+    width: 50%;
+    color: rgba(255, 0, 0, 0.52);
+    font-size: 12px !important;
+    line-height: 32px !important;
+}
+.ui-grid-title .price{
+    float: left;
+    color: rgba(0, 0, 255, 0.47);
+    text-align: center;
+    width: 50%;
+    font-size: 12px !important;
+    line-height: 32px !important;
+}
+ .ui-grid-title .like .ui-heart {
+    background: url("../images/heart.png") no-repeat 0 4px;
+    padding: 0px 8px !important;
 }
 
 .ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
-    height: 100%;
+    height: 95%;
     padding: 0;
     border: 0;
     float: left;
@@ -18,6 +53,7 @@
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+    text-align: center;
 }
 
 /* grid solo: 100 - single item fallback */
@@ -149,21 +185,22 @@
 /* B
 -----------------------------------------------------------------------------------------------------------*/
 .ui-bar-b {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-    border: 1px solid #456f9a /*{b-bar-border}*/;
-    background: #5e87b0 /*{b-bar-background-color}*/;
-    color: #fff /*{b-bar-color}*/;
+    position: relative;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    margin-left: 2px !important;
+    margin-right: 3px !important;
+    border: 1px solid rgba(69, 111, 154, 0.42);
+    background: rgba(94, 135, 176, 0) /*{b-bar-background-color}*/;
+    color: rgba(0, 0, 0, 0.60) /*{b-bar-color}*/;
     font-weight: bold;
-    text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 0 /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#6facd5 /*{b-bar-background-start}*/), to(#497bae /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
-    background-image: -webkit-linear-gradient(#6facd5 /*{b-bar-background-start}*/, #497bae /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-    background-image: -moz-linear-gradient(#6facd5 /*{b-bar-background-start}*/, #497bae /*{b-bar-background-end}*/); /* FF3.6 */
-    background-image: -ms-linear-gradient(#6facd5 /*{b-bar-background-start}*/, #497bae /*{b-bar-background-end}*/); /* IE10 */
-    background-image: -o-linear-gradient(#6facd5 /*{b-bar-background-start}*/, #497bae /*{b-bar-background-end}*/); /* Opera 11.10+ */
-    background-image: linear-gradient(#6facd5 /*{b-bar-background-start}*/, #497bae /*{b-bar-background-end}*/);
+    /*text-shadow: 0 *//*{b-bar-shadow-x}*//* 1px *//*{b-bar-shadow-y}*//* 0 *//*{b-bar-shadow-radius}*//* #3e6790 *//*{b-bar-shadow-color}*//*;*/
+    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#6facd5 *//*{b-bar-background-start}*//*), to(#497bae *//*{b-bar-background-end}*//*)); *//* Saf4+, Chrome */
+    /*background-image: -webkit-linear-gradient(#6facd5 *//*{b-bar-background-start}*//*, #497bae *//*{b-bar-background-end}*//*); *//* Chrome 10+, Saf5.1+ */
+    /*background-image: -moz-linear-gradient(#6facd5 *//*{b-bar-background-start}*//*, #497bae *//*{b-bar-background-end}*//*); *//* FF3.6 */
+    /*background-image: -ms-linear-gradient(#6facd5 *//*{b-bar-background-start}*//*, #497bae *//*{b-bar-background-end}*//*); *//* IE10 */
+    /*background-image: -o-linear-gradient(#6facd5 *//*{b-bar-background-start}*//*, #497bae *//*{b-bar-background-end}*//*); *//* Opera 11.10+ */
+    /*background-image: linear-gradient(#6facd5 *//*{b-bar-background-start}*//*, #497bae *//*{b-bar-background-end}*//*);*/
 }
 
 .ui-bar-b,
