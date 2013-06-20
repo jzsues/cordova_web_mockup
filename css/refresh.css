@@ -51,8 +51,8 @@
     /*background: rgba(255, 255, 255, 0);*/
     height: 50px;
     line-height: 50px;
-    padding: 5px 10px;
-    border-bottom: 0px solid #ccc;
+    padding: 5px 5px;
+    border-bottom: 1px solid #ccc;
     font-weight: normal;
     font-size: 14px;
     color: #888;

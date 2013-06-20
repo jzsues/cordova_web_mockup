@@ -113,30 +113,34 @@
                     }
                 },
                 onScrollMove: function () {
-                    if (this.y > 5 && !pullDownEl.hasClass('flip')) {
+                    var downHasFlip = pullDownEl.hasClass('flip');
+                    var upHasFlip = pullUpEl.hasClass('flip');
+                    if (this.y > 5 && !downHasFlip) {
                         pullDownEl.addClass('flip');
                         pullDownEl.find('.pullDownLabel').html(REFRESH_RELEASE_STR);
                         this.minScrollY = 0;
-                    } else if (this.y < 5 && pullDownEl.hasClass('flip')) {
+                    } else if (this.y < 5 && downHasFlip) {
                         pullDownEl.removeClass('flip');
                         pullDownLabelEL.html(REFRESH_PULL_DOWN_STR);
                         this.minScrollY = -pullDownOffset;
-                    } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.hasClass('flip')) {
+                    } else if (this.y < (this.maxScrollY - 5) && !upHasFlip) {
                         pullUpEl.addClass('flip');
                         pullUpLabelEL.html(REFRESH_RELEASE_STR);
                         this.maxScrollY = this.maxScrollY;
-                    } else if (this.y > (this.maxScrollY + 5) && pullUpEl.hasClass('flip')) {
+                    } else if (this.y > (this.maxScrollY + 5) && upHasFlip) {
                         pullUpEl.removeClass('flip');
                         pullUpLabelEL.html(REFRESH_PULL_UP_STR);
                         this.maxScrollY = pullUpOffset;
                     }
                 },
                 onScrollEnd: function () {
-                    if (pullDownEl.hasClass('flip')) {
+                    var downHasFlip = pullDownEl.hasClass('flip');
+                    var upHasFlip = pullUpEl.hasClass('flip');
+                    if (downHasFlip) {
                         pullDownEl.replaceClass('flip', 'loading');
                         pullDownLabelEL.html(REFRESH_LOADING_STR);
                         pullDownAction();	// Execute custom function (ajax call?)
-                    } else if (pullUpEl.hasClass('flip')) {
+                    } else if (upHasFlip) {
                         pullUpEl.replaceClass('flip', 'loading');
                         pullUpLabelEL.html(REFRESH_LOADING_STR);
                         pullUpAction();	// Execute custom function (ajax call?)

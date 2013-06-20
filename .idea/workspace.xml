@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pull-icon@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/iscroll.js" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\css\reset.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\js\refresh.iscroll.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\js\touch.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\js\z.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\js\z.ui.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\work\website\mockup\plugins\jq.iscroll.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/grid.css" afterPath="$PROJECT_DIR$/css/grid.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/jq.ui.js" afterPath="$PROJECT_DIR$/ui/jq.ui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/jq.ui.js" afterPath="$PROJECT_DIR$/ui/src/jq.ui.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/refresh.css" afterPath="$PROJECT_DIR$/css/refresh.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/refresh.js" afterPath="$PROJECT_DIR$/js/refresh.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\work\website\mockup\defer\guess.html" afterPath="$PROJECT_DIR$/inc/guess.html" />
-      <change type="MOVED" beforePath="D:\work\website\mockup\defer\location.html" afterPath="$PROJECT_DIR$/inc/location.html" />
-      <change type="MOVED" beforePath="D:\work\website\mockup\defer\self.html" afterPath="$PROJECT_DIR$/inc/self.html" />
-      <change type="MOVED" beforePath="D:\work\website\mockup\defer\today.html" afterPath="$PROJECT_DIR$/inc/today.html" />
     </list>
     <ignored path="mockup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../jqmobi/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371482884847" ignored="false" />
-    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371707866228" ignored="false" />
+    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371708190308" ignored="false" />
     <file path="/cordova_detech_os.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371523474356" ignored="false" />
     <file path="/app.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371487166779" ignored="false" />
     <file path="/Dummy.txt" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371700713630" ignored="false" />
@@ -72,10 +55,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="46" selection-start="6630" selection-end="6630" vertical-scroll-proportion="1.0592735">
+            <state line="142" column="40" selection-start="6953" selection-end="6953" vertical-scroll-proportion="-7.226415">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -137,10 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refresh.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="refresh.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/refresh.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="41" selection-start="778" selection-end="813" vertical-scroll-proportion="-8.36">
+            <state line="54" column="20" selection-start="899" selection-end="899" vertical-scroll-proportion="1.862069">
               <folding />
             </state>
           </provider>
@@ -185,8 +168,8 @@
         <option value="$PROJECT_DIR$/ui/src/jq.ui.js" />
         <option value="$PROJECT_DIR$/css/grid.css" />
         <option value="$PROJECT_DIR$/inc/today.html" />
-        <option value="$PROJECT_DIR$/css/refresh.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/refresh.css" />
       </list>
     </option>
   </component>
@@ -557,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/refresh.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="41" selection-start="778" selection-end="813" vertical-scroll-proportion="-8.36">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/grid.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="20" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
@@ -573,10 +549,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="46" selection-start="6630" selection-end="6630" vertical-scroll-proportion="1.0592735">
+        <state line="142" column="40" selection-start="6953" selection-end="6953" vertical-scroll-proportion="-7.226415">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/refresh.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="20" selection-start="899" selection-end="899" vertical-scroll-proportion="1.862069">
+          <folding />
         </state>
       </provider>
     </entry>
