@@ -1,19 +1,22 @@
 <script>
     $(document).ready(function () {
-        var refresh = $('.ui-refresh');
-        refresh.css('height', window.innerHeight - ($('header').height() || 42)).refresh({
-            ready: function (dir, type) {
-                var me = this;
-                setTimeout(function () {
-                    me.afterDataLoading(dir);    //数据加载完成后改变状态
-                }, 3000);
+        setTimeout(function () {
+            var refresh = $('.ui-refresh');
+            refresh.css('height', window.innerHeight - ($('header').height() || 42)).refresh({
+                ready: function (dir, type) {
+                    var me = this;
+                    setTimeout(function () {
+                        me.afterDataLoading(dir);    //数据加载完成后改变状态
+                    }, 3000);
 
-            }
-        });
+                }
+            });
+        }, 1000);
+
     });
 </script>
 <div id='today_content' class="ui-grid-container">
-    <div class="ui-refresh">
+    <div>
         <div class="ui-refresh-up"></div>
         <div class="ui-grid-a">
             <div class="ui-block-a">

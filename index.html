@@ -3,7 +3,8 @@
 <head>
     <title>Cordova Web Mockup</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 
@@ -11,9 +12,6 @@
     <link rel="stylesheet" type="text/css" href="css/grid.css"/>
     <link rel="stylesheet" type="text/css" href="css/icons.css"/>
     <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
-    <style>
-
-    </style>
 
 
     <script type="text/javascript" charset="utf-8" src="./jq.mobi.min.js"></script>
@@ -23,15 +21,6 @@
         detechCordova();
     </script>
     <script type="text/javascript" charset="utf-8" src="cordova/js/app.js"></script>
-    <script>
-
-
-        $(document).ready(function () {
-
-        });
-
-
-    </script>
     <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.debug.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.swipe.js"></script>
@@ -64,10 +53,25 @@
         document.addEventListener("DOMContentLoaded", init, false);
         $.ui.ready(function () {
             //alert("$.ui.ready");
+            setTimeout(refresh,1000);
         });
         function loadedPanel(what) {
             //We are going to set the badge as the number of li elements inside the target
             //$.ui.updateBadge("#jqmlink", $("#jqm").find("li").length);
+
+        }
+        function refresh() {
+            var refresh = $('.ui-refresh');
+            var h = window.innerHeight - ($('#header').zheight() || 42);
+            refresh.css('height', h).refresh({
+                ready: function (dir, type) {
+                    var me = this;
+                    setTimeout(function () {
+                        me.afterDataLoading(dir);    //数据加载完成后改变状态
+                    }, 3000);
+
+                }
+            });
         }
         function unloadedPanel(what) {
             //console.log("unloaded " + what.id);
@@ -106,23 +110,6 @@
         <div id="today_panel" class="panel" selected="true" data-load="loadedPanel"
              data-unload="unloadedPanel"
              data-tab="navbar_today" data-header="header">
-            <script>
-                $(document).ready(function () {
-                    var refresh = $('.ui-refresh');
-                    var h = window.innerHeight - ($('#header').height() || 42);
-                    console.log(h);
-                    refresh.css('height', h);
-                    refresh.refresh({
-                        ready: function (dir, type) {
-                            var me = this;
-                            setTimeout(function () {
-                                me.afterDataLoading(dir);    //数据加载完成后改变状态
-                            }, 3000);
-
-                        }
-                    });
-                });
-            </script>
             <div id='today_content' class="ui-grid-container">
                 <div class="ui-refresh">
                     <div class="ui-refresh-up"></div>
@@ -198,7 +185,6 @@
                             <div class="ui-bar ui-bar-b">Block B</div>
                         </div>
                     </div>
-                    <div class="ui-refresh-down"></div>
                 </div>
             </div>
         </div>

@@ -6,10 +6,112 @@
  * @import core/zepto.js, core/zepto.extend.js
  */
 (function ($, undefined) {
-    $.fn["wrapAll"] = function (structure) {
+    $.fragment = function (html, name, properties) {
+        if (html.replace) html = html.replace(tagExpanderRE, "<$1></$2>")
+        if (name === undefined) name = fragmentRE.test(html) && RegExp.$1
+        if (!(name in containers)) name = '*'
+
+        var nodes, dom, container = containers[name]
+        container.innerHTML = '' + html
+        dom = $.each(slice.call(container.childNodes), function () {
+            container.removeChild(this)
+        })
+        if (isPlainObject(properties)) {
+            nodes = $(dom)
+            $.each(properties, function (key, value) {
+                if (methodAttributes.indexOf(key) > -1) nodes[key](value)
+                else nodes.attr(key, value)
+            })
+        }
+        return dom
+    };
+    $.traverseNode = function (node, fun) {
+        fun(node)
+        for (var key in node.childNodes) $.traverseNode(node.childNodes[key], fun)
+    };
+    var adjacencyOperators = [ 'zafter', 'zprepend', 'zbefore', 'zappend' ];
+    adjacencyOperators.forEach(function (operator, operatorIndex) {
+        var inside = operatorIndex % 2 //=> prepend, append
+
+        $.fn[operator] = function () {
+            // arguments can be nodes, arrays of nodes, Zepto objects and HTML strings
+            var argType, nodes = $.map(arguments, function (arg) {
+                    argType = $z.type(arg)
+                    return argType == "object" || argType == "array" || arg == null ?
+                        arg : $.fragment(arg)
+                }),
+                parent, copyByClone = this.length > 1
+            if (nodes.length < 1) return this
+
+            return this.each(function (_, target) {
+                parent = inside ? target : target.parentNode
+
+                // convert all methods to a "before" operation
+                target = operatorIndex == 0 ? target.nextSibling :
+                    operatorIndex == 1 ? target.firstChild :
+                        operatorIndex == 2 ? target :
+                            null
+
+                nodes.forEach(function (node) {
+                    if (copyByClone) node[0][0] = node[0][0].cloneNode(true)
+                    else if (!parent) return $(node).remove()
+                    var _node = parent.insertBefore(node[0][0], target);
+                    $.traverseNode(_node, function (el) {
+                        if (el.nodeName != null && el.nodeName.toUpperCase() === 'SCRIPT' &&
+                            (!el.type || el.type === 'text/javascript') && !el.src)
+                            window['eval'].call(window, el.innerHTML)
+                    })
+                })
+            })
+        };
+    });
+    function dasherize(str) {
+        return str.replace(/::/g, '/')
+            .replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
+            .replace(/([a-z\d])([A-Z])/g, '$1_$2')
+            .replace(/_/g, '-')
+            .toLowerCase()
+    }
+
+    function maybeAddPx(name, value) {
+        return (typeof value == "number" && !cssNumber[dasherize(name)]) ? value + "px" : value
+    }
+
+    function camelize(str) {
+        return str.replace(/-+(.)?/g, function (match, chr) {
+            return chr ? chr.toUpperCase() : ''
+        })
+    }
+
+    $.fn["zcss"] = function (property, value) {
+        if (arguments.length < 2 && typeof property == 'string')
+            return this[0] && (this[0].style[camelize(property)] || getComputedStyle(this[0], '').getPropertyValue(property))
+
+        var css = ''
+        if ($z.isString(property)) {
+            if (!value && value !== 0)
+                this.each(function () {
+                    this.style.removeProperty(dasherize(property))
+                })
+            else
+                css = dasherize(property) + ":" + maybeAddPx(property, value)
+        } else {
+            for (key in property)
+                if (!property[key] && property[key] !== 0)
+                    this.each(function () {
+                        this.style.removeProperty(dasherize(key))
+                    })
+                else
+                    css += dasherize(key) + ':' + maybeAddPx(key, property[key]) + ';'
+        }
+
+        return this.each(function () {
+            this.style.cssText += ';' + css
+        })
+    };
+    $.fn["zwrapAll"] = function (structure) {
         if (this[0]) {
-            structure = $(structure);
-            structure.insertBefore($(this[0]));
+            $(this[0]).zbefore(structure = $(structure))
             var children
             // drill down to the inmost element
             while ((children = structure.children()).length) structure = children.first()
@@ -17,6 +119,30 @@
         }
         return this
     };
+    var zmap = {
+        zwidth: "width",
+        zheight: "height"
+    };
+
+    ['zwidth', 'zheight'].forEach(function (dimension) {
+        $.fn[dimension] = function (value) {
+            var offset, el = this[0],
+                Dimension = zmap[dimension].replace(/./, function (m) {
+                    return m[0].toUpperCase()
+                })
+            if (value === undefined) return $z.isWindow(el) ? el['inner' + Dimension] :
+                $z.isDocument(el) ? el.documentElement['offset' + Dimension] :
+                    (offset = this.offset()) && offset[zmap[dimension]]
+            else return this.each(function (idx) {
+                el = $(this)
+                el.css(zmap[dimension], funcArg(this, value, idx, el[zmap[dimension]]()))
+            })
+        }
+    });
+    function funcArg(context, arg, idx, payload) {
+        return $z.isFunction(arg) ? arg.call(context, idx, payload) : arg
+    }
+
     var $z = {
         class2type: {},
         type: function (obj) {

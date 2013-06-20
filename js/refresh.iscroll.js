@@ -7,7 +7,7 @@
  * @import core/zepto.iscroll.js, widget/refresh.js
  */
 
-(function($, undefined) {
+(function ($, undefined) {
     /**
      * @name refresh.iscroll
      * @desc Refresh iscroll插件，支持拉动加载，内滚采用iscroll方式，体验更加贴近native。
@@ -26,17 +26,20 @@
                 var me = this,
                     data = me._data,
                     $el = me.root(),
-                    wrapperH = $el.height();
+                    wrapperH = $el.zheight();
 
                 me._initOrg();
                 $.extend(data, {
                     useTransition: true,
                     speedScale: 1,
-                    topOffset: data['$upElem'] ? data['$upElem'].height() : 0
+                    topOffset: data['$upElem'] ? data['$upElem'].zheight() : 0
                 });
                 data.threshold = data.threshold || 5;
 
-                $el.wrapAll($('<div class="ui-refresh-wrapper"></div>').height(wrapperH)).css('height', 'auto');
+                //$el.css('height', 'auto');
+                var w = $('<div class="ui-refresh-wrapper"></div>');
+                $el.zwrapAll(w).zcss('height', 'auto');
+                $(".ui-refresh-wrapper").zheight(wrapperH);
                 me._loadIscroll();
             },
             _changeStyle: function (dir, state) {

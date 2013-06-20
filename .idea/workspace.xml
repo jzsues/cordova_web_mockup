@@ -2,24 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/jq.iscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/refresh.iscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/touch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/z.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/z.ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/album.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/doc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/p-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/p-load.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pdf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ppt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/txt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ufo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/xls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/refresh.css" afterPath="$PROJECT_DIR$/css/refresh.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/refresh.iscroll.js" afterPath="$PROJECT_DIR$/js/refresh.iscroll.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defer/today.html" afterPath="$PROJECT_DIR$/defer/today.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/z.ui.js" afterPath="$PROJECT_DIR$/js/z.ui.js" />
     </list>
     <ignored path="mockup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../jqmobi/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371482884847" ignored="false" />
-    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371618209902" ignored="false" />
+    <file path="/index.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371655663861" ignored="false" />
     <file path="/cordova_detech_os.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371523474356" ignored="false" />
     <file path="/app.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371487166779" ignored="false" />
-    <file path="/Dummy.txt" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371568229594" ignored="false" />
+    <file path="/Dummy.txt" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371651579595" ignored="false" />
     <file path="/a.dummy" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371616886325" ignored="false" />
     <file path="/external.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371527262776" ignored="false" />
     <file path="/self.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371528489758" ignored="false" />
@@ -28,20 +34,21 @@
     <file path="/today.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371617955851" ignored="false" />
     <file path="/grid.css" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371532932507" ignored="false" />
     <file path="/jq.ui.less" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371535831364" ignored="false" />
-    <file path="/refresh.css" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371582095629" ignored="false" />
+    <file path="/refresh.css" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371618938321" ignored="false" />
     <file path="/jq.scroller.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371555637285" ignored="false" />
-    <file path="/*.regexp" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371609598001" ignored="false" />
+    <file path="/*.regexp" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371652015757" ignored="false" />
     <file path="/jq.iscroll.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371568831493" ignored="false" />
-    <file path="/refresh.iscroll.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371575522143" ignored="false" />
+    <file path="/refresh.iscroll.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371665530450" ignored="false" />
     <file path="/refresh.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371572690412" ignored="false" />
     <file path="/zepto.ui.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371572551786" ignored="false" />
     <file path="/z.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371573233454" ignored="false" />
-    <file path="/z.ui.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371614687075" ignored="false" />
+    <file path="/z.ui.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371665118740" ignored="false" />
     <file path="$PROJECT_DIR$/../../js/GMU/_src/core/zepto.ui.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371573987639" ignored="false" />
     <file path="$PROJECT_DIR$/../../js/GMU/_src/widget/refresh.iscroll.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371575417973" ignored="false" />
     <file path="/test.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371610902628" ignored="false" />
-    <file path="$PROJECT_DIR$/../../js/GMU/_src/core/zepto/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371612767668" ignored="false" />
-    <file path="/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371612296832" ignored="false" />
+    <file path="$PROJECT_DIR$/../../js/GMU/_src/core/zepto/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371663704570" ignored="false" />
+    <file path="/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371663704189" ignored="false" />
+    <file path="/test.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371665377224" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +68,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="35" selection-start="4457" selection-end="4457" vertical-scroll-proportion="0.44660193">
+            <state line="13" column="4" selection-start="611" selection-end="674" vertical-scroll-proportion="-8.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="58" selection-start="1741" selection-end="1741" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -73,8 +89,21 @@
       <file leaf-file-name="z.ui.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/z.ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="610" column="31" selection-start="20382" selection-end="20389" vertical-scroll-proportion="-14.461538">
+            <state line="90" column="32" selection-start="3664" selection-end="3664" vertical-scroll-proportion="-10.115385">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jq.ui.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/jq.ui.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="1812" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#11674#69285#1" expanded="true" />
+                <element signature="e#73139#75246#2" expanded="true" />
+                <element signature="e#80590#81289#2" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,16 +111,16 @@
       <file leaf-file-name="jq.mobi.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jq.mobi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2229" column="13" selection-start="86434" selection-end="86434" vertical-scroll-proportion="0.0">
+            <state line="516" column="12" selection-start="17788" selection-end="17788" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refresh.iscroll.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="refresh.iscroll.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/refresh.iscroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="61" selection-start="1401" selection-end="1419" vertical-scroll-proportion="-7.5">
+            <state line="39" column="67" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.52683896">
               <folding />
             </state>
           </provider>
@@ -100,16 +129,7 @@
       <file leaf-file-name="refresh.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/refresh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="21" selection-start="4436" selection-end="4441" vertical-scroll-proportion="-68.65385">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jq.ui.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/jq.ui.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3730" column="19" selection-start="134713" selection-end="134713" vertical-scroll-proportion="0.0">
+            <state line="48" column="15" selection-start="1596" selection-end="1599" vertical-scroll-proportion="-13.269231">
               <folding />
             </state>
           </provider>
@@ -118,10 +138,8 @@
       <file leaf-file-name="jq.iscroll.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/jq.iscroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="16" selection-start="4495" selection-end="4495" vertical-scroll-proportion="-0.5769231">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="625" column="27" selection-start="21826" selection-end="21836" vertical-scroll-proportion="-52.153847">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,7 +147,7 @@
       <file leaf-file-name="today.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/defer/today.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="15" selection-start="100" selection-end="100" vertical-scroll-proportion="-1.875">
+            <state line="13" column="14" selection-start="489" selection-end="489" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -162,7 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/defer/guess.html" />
         <option value="$PROJECT_DIR$/css/grid.css" />
         <option value="$PROJECT_DIR$/css/jq.ui.less" />
         <option value="$PROJECT_DIR$/css/veryless.less" />
@@ -170,19 +187,19 @@
         <option value="$PROJECT_DIR$/js/zepto.ui.js" />
         <option value="$PROJECT_DIR$/js/refresh.js" />
         <option value="$PROJECT_DIR$/js/z.js" />
-        <option value="$PROJECT_DIR$/css/refresh.css" />
         <option value="$PROJECT_DIR$/css/test.js" />
         <option value="$PROJECT_DIR$/js/test.js" />
-        <option value="$PROJECT_DIR$/js/z.ui.js" />
         <option value="$PROJECT_DIR$/plugins/jq.iscroll.js" />
-        <option value="$PROJECT_DIR$/js/refresh.iscroll.js" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/refresh.css" />
         <option value="$PROJECT_DIR$/defer/today.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/z.ui.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/js/refresh.iscroll.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="713" />
@@ -242,62 +259,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -318,11 +279,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/plugins" />
       <recent name="$PROJECT_DIR$/css/images" />
-      <recent name="$PROJECT_DIR$/css" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js" />
@@ -389,14 +350,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="22" width="1280" height="713" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="713" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.49960223" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5003978" order="9" side_tool="true" content_ui="tabs" />
@@ -469,73 +430,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plugins/jq.fx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="35" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.6402214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMTraversalAndRange.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.11070111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/jq.desktopBrowsers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="24" selection-start="2143" selection-end="2152" vertical-scroll-proportion="0.06427221">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/touch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="36" selection-start="904" selection-end="904" vertical-scroll-proportion="0.63716817">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/z.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="4" selection-start="7032" selection-end="7032" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="469" column="15" selection-start="8105" selection-end="8105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="469" column="15" selection-start="8105" selection-end="8105" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="22" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/refresh.iscroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="61" selection-start="1401" selection-end="1419" vertical-scroll-proportion="-7.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/refresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="21" selection-start="4436" selection-end="4441" vertical-scroll-proportion="-68.65385">
-          <folding />
-        </state>
+        <state line="131" column="22" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/jq.ui.js">
@@ -545,32 +451,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/jq.iscroll.js">
+    <entry file="file://$PROJECT_DIR$/css/reset.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="16" selection-start="4495" selection-end="4495" vertical-scroll-proportion="-0.5769231">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jq.mobi.js">
+    <entry file="file://$PROJECT_DIR$/plugins/jq.fx.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2229" column="13" selection-start="86434" selection-end="86434" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/z.ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="610" column="31" selection-start="20382" selection-end="20389" vertical-scroll-proportion="-14.461538">
+        <state line="87" column="16" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/defer/today.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="15" selection-start="100" selection-end="100" vertical-scroll-proportion="-1.875">
+        <state line="13" column="14" selection-start="489" selection-end="489" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jq.ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1812" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#11674#69285#1" expanded="true" />
+            <element signature="e#73139#75246#2" expanded="true" />
+            <element signature="e#80590#81289#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1293" column="7" selection-start="20227" selection-end="20227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/refresh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="15" selection-start="1596" selection-end="1599" vertical-scroll-proportion="-13.269231">
           <folding />
         </state>
       </provider>
@@ -584,7 +504,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="35" selection-start="4457" selection-end="4457" vertical-scroll-proportion="0.44660193">
+        <state line="13" column="4" selection-start="611" selection-end="674" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/z.ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="32" selection-start="3664" selection-end="3664" vertical-scroll-proportion="-10.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jq.mobi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="516" column="12" selection-start="17788" selection-end="17788" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="58" selection-start="1741" selection-end="1741" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/jq.iscroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="625" column="27" selection-start="21826" selection-end="21836" vertical-scroll-proportion="-52.153847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/refresh.iscroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="67" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.52683896">
           <folding />
         </state>
       </provider>
