@@ -1,6 +1,6 @@
 /* content configurations. */
 .ui-grid-container{
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d {

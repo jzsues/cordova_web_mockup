@@ -1470,7 +1470,7 @@
             });
             
             this.modalWindow = modalDiv;
-            //get first div, defer
+            //get first div, inc
             var defer = {};
             var contentDivs = this.viewportContainer.get().querySelectorAll(".panel");
             for (var i = 0; i < contentDivs.length; i++) {

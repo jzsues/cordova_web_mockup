@@ -14,14 +14,14 @@
     <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
 
 
-    <script type="text/javascript" charset="utf-8" src="./jq.mobi.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./jq.mobi.js"></script>
     <script type="text/javascript" charset="utf-8" src="./cordova_detech_os.js"></script>
     <script>
         //auto load suitable cordova js lib
         detechCordova();
     </script>
     <script type="text/javascript" charset="utf-8" src="cordova/js/app.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.debug.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.swipe.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.carousel.js"></script>
@@ -29,18 +29,16 @@
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.shake.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.alphatable.js"></script>
     <script type="text/javascript" charset="utf-8" src="./plugins/jq.template.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./plugins/jq.iscroll.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./js/z.ui.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./plugins/jq.scroller.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/iscroll.js"></script>
     <script type="text/javascript" charset="utf-8" src="./js/refresh.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./js/refresh.iscroll.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/touch.js"></script>
 
     <script type="text/javascript">
         /* This function runs once the page is loaded, but appMobi is not yet active */
         var webRoot = "./css/";
         $.ui.autoLaunch = false;
         $.ui.openLinksNewTab = false;
-        $.ui.resetScrollers = false;
+        $.ui.resetScrollers = true;
 
         //$.ui.nativeTouchScroll=false;
         var init = function () {
@@ -51,28 +49,13 @@
             //$.ui.removeFooterMenu(); This would remove the bottom nav menu
         };
         document.addEventListener("DOMContentLoaded", init, false);
-        $.ui.ready(function () {
-            //alert("$.ui.ready");
-            setTimeout(refresh,1000);
-        });
+
         function loadedPanel(what) {
             //We are going to set the badge as the number of li elements inside the target
             //$.ui.updateBadge("#jqmlink", $("#jqm").find("li").length);
 
         }
-        function refresh() {
-            var refresh = $('.ui-refresh');
-            var h = window.innerHeight - ($('#header').zheight() || 42);
-            refresh.css('height', h).refresh({
-                ready: function (dir, type) {
-                    var me = this;
-                    setTimeout(function () {
-                        me.afterDataLoading(dir);    //数据加载完成后改变状态
-                    }, 3000);
 
-                }
-            });
-        }
         function unloadedPanel(what) {
             //console.log("unloaded " + what.id);
         }
@@ -88,7 +71,88 @@
         }
 
     </script>
+    <script>
+        var myScroll,
+                pullDownEl, pullDownOffset,
+                pullUpEl, pullUpOffset,
+                generatedCount = 0;
+        var pullDownLabelEL, pullUPLabelEL;
 
+        function pullDownAction() {
+            setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+                myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+            }, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+        }
+
+        function pullUpAction() {
+            setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+                myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+            }, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+        }
+        var REFRESH_PULL_DOWN_STR = "下拉加载更多";
+        var REFRESH_PULL_UP_STR = "上拉加载更多";
+        var REFRESH_RELEASE_STR = "松开立即加载";
+        var REFRESH_LOADING_STR = "加载中";
+        function loaded() {
+            pullDownEl = $('#pullDown');
+            pullDownOffset = pullDownEl.offset().height;
+            pullUpEl = $('#pullUp');
+            pullUpOffset = pullUpEl.offset.height;
+            pullDownLabelEL = pullDownEl.find('.pullDownLabel');
+            pullUpLabelEL = pullUpEl.find('.pullUpLabel');
+            myScroll = new iScroll('today_panel', {
+                useTransition: true,
+                topOffset: pullDownOffset,
+                onRefresh: function () {
+                    if (pullDownEl.hasClass('loading')) {
+                        pullDownEl.removeClass('loading');
+                        pullDownLabelEL.html(REFRESH_PULL_DOWN_STR);
+                    } else if (pullUpEl.hasClass('loading')) {
+                        pullUpEl.removeClass('loading');
+                        pullUpLabelEL.html(REFRESH_PULL_UP_STR);
+                    }
+                },
+                onScrollMove: function () {
+                    if (this.y > 5 && !pullDownEl.hasClass('flip')) {
+                        pullDownEl.addClass('flip');
+                        pullDownEl.find('.pullDownLabel').html(REFRESH_RELEASE_STR);
+                        this.minScrollY = 0;
+                    } else if (this.y < 5 && pullDownEl.hasClass('flip')) {
+                        pullDownEl.removeClass('flip');
+                        pullDownLabelEL.html(REFRESH_PULL_DOWN_STR);
+                        this.minScrollY = -pullDownOffset;
+                    } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.hasClass('flip')) {
+                        pullUpEl.addClass('flip');
+                        pullUpLabelEL.html(REFRESH_RELEASE_STR);
+                        this.maxScrollY = this.maxScrollY;
+                    } else if (this.y > (this.maxScrollY + 5) && pullUpEl.hasClass('flip')) {
+                        pullUpEl.removeClass('flip');
+                        pullUpLabelEL.html(REFRESH_PULL_UP_STR);
+                        this.maxScrollY = pullUpOffset;
+                    }
+                },
+                onScrollEnd: function () {
+                    if (pullDownEl.hasClass('flip')) {
+                        pullDownEl.replaceClass('flip', 'loading');
+                        pullDownLabelEL.html(REFRESH_LOADING_STR);
+                        pullDownAction();	// Execute custom function (ajax call?)
+                    } else if (pullUpEl.hasClass('flip')) {
+                        pullUpEl.replaceClass('flip', 'loading');
+                        pullUpLabelEL.html(REFRESH_LOADING_STR);
+                        pullUpAction();	// Execute custom function (ajax call?)
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+        $.ui.ready(function () {
+            console.log("$.ui.ready");
+            setTimeout(loaded, 200);
+        });
+    </script>
 </head>
 <body>
 <div id="jQUi">
@@ -107,100 +171,25 @@
     </div>
 
     <div id="content">
-        <div id="today_panel" class="panel" selected="true" data-load="loadedPanel"
+        <div id="today_panel" class="panel" style="overflow:hidden" selected="true" data-load="loadedPanel"
+             data-defer="inc/today.html"
              data-unload="unloadedPanel"
              data-tab="navbar_today" data-header="header">
-            <div id='today_content' class="ui-grid-container">
-                <div class="ui-refresh">
-                    <div class="ui-refresh-up"></div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="ui-bar ui-bar-b">Block A</div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="ui-bar ui-bar-b">Block B</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <div id="guess_panel" class="panel" data-load="loadedPanel" data-defer="defer/guess.html"
+        <div id="guess_panel" class="panel" data-load="loadedPanel" data-defer="inc/guess.html"
              data-unload="unloadedPanel"
              data-tab="navbar_guess" data-header="header">
 
         </div>
 
-        <div id="location_panel" class="panel" data-load="loadedPanel" data-defer="defer/location.html"
+        <div id="location_panel" class="panel" data-load="loadedPanel" data-defer="inc/location.html"
              data-unload="unloadedPanel"
              data-tab="navbar_location" data-header="header">
 
         </div>
 
-        <div id="self_panel" class="panel" data-load="loadedPanel" data-defer="defer/self.html"
+        <div id="self_panel" class="panel" data-load="loadedPanel" data-defer="inc/self.html"
              data-unload="unloadedPanel"
              data-tab="navbar_self" data-header="header">
 
