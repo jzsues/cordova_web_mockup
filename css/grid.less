@@ -1,0 +1,214 @@
+.ui-grid-container {
+  /*height: 100%;*/
+}
+
+.ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d {
+  overflow: hidden;
+  height: 190px;
+}
+
+.ui-grid-a img, .ui-grid-b img, .ui-grid-c img, .ui-grid-d img {
+  display: inline-block;
+  height: 120px;
+  vertical-align: middle;
+}
+
+.ui-grid-title {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 24px;
+  line-height: 24px;
+}
+
+.ui-grid-title .name {
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.47);
+}
+
+.ui-grid-title .like {
+  float: left;
+  text-align: center;
+  width: 50%;
+  color: rgba(255, 0, 0, 0.52);
+  font-size: 12px !important;
+  line-height: 32px !important;
+}
+
+.ui-grid-title .price {
+  float: left;
+  color: rgba(0, 0, 255, 0.47);
+  text-align: center;
+  width: 50%;
+  font-size: 12px !important;
+  line-height: 32px !important;
+}
+
+.ui-grid-title .like .ui-heart {
+  background: url("../images/heart.png") no-repeat 0 4px;
+  padding: 0px 8px !important;
+}
+
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
+  height: 95%;
+  padding: 0;
+  border: 0;
+  float: left;
+  min-height: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* grid solo: 100 - single item fallback */
+.ui-grid-solo .ui-block-a {
+  display: block;
+  float: none;
+}
+
+/* Lower percentages for older browsers (i.e. IE7) to prevent wrapping. -.5px to fix BB5 wrap issue. */
+/* grid a: 50/50 */
+.ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b {
+  width: 49.95%;
+}
+
+.ui-grid-a > :nth-child(n) {
+  width: 50%;
+  margin-right: -.5px;
+}
+
+.ui-grid-a .ui-block-a {
+  clear: left;
+}
+
+/* grid b: 33/33/33 */
+.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
+  width: 33.25%;
+}
+
+.ui-grid-b > :nth-child(n) {
+  width: 33.333%;
+  margin-right: -.5px;
+}
+
+.ui-grid-b .ui-block-a {
+  clear: left;
+}
+
+/* grid c: 25/25/25/25 */
+.ui-grid-c .ui-block-a, .ui-grid-c .ui-block-b, .ui-grid-c .ui-block-c, .ui-grid-c .ui-block-d {
+  width: 24.925%;
+}
+
+.ui-grid-c > :nth-child(n) {
+  width: 25%;
+  margin-right: -.5px;
+}
+
+.ui-grid-c .ui-block-a {
+  clear: left;
+}
+
+/* grid d: 20/20/20/20/20 */
+.ui-grid-d .ui-block-a, .ui-grid-d .ui-block-b, .ui-grid-d .ui-block-c, .ui-grid-d .ui-block-d, .ui-grid-d .ui-block-e {
+  width: 19.925%;
+}
+
+.ui-grid-d > :nth-child(n) {
+  width: 20%;
+}
+
+.ui-grid-d .ui-block-a {
+  clear: left;
+}
+
+/* preset breakpoint to switch to stacked grid styles below 35em (560px) */
+@media all and (max-width: 35em) {
+  .ui-responsive .ui-block-a,
+  .ui-responsive .ui-block-b,
+  .ui-responsive .ui-block-c,
+  .ui-responsive .ui-block-d,
+  .ui-responsive .ui-block-e {
+    width: 100%;
+    float: none;
+  }
+}
+
+.ui-grid-a .ui-btn, .ui-grid-b .ui-btn, .ui-grid-c .ui-btn, .ui-grid-d .ui-btn, .ui-grid-e .ui-btn, .ui-grid-solo .ui-btn {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* B
+-----------------------------------------------------------------------------------------------------------*/
+.ui-bar-b {
+  position: relative;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  margin-left: 2px !important;
+  margin-right: 3px !important;
+  border: 1px solid rgba(69, 111, 154, 0.42);
+  background: rgba(94, 135, 176, 0);
+  color: rgba(0, 0, 0, 0.60);
+  font-weight: bold;
+
+}
+
+.ui-bar-b,
+.ui-bar-b input,
+.ui-bar-b select,
+.ui-bar-b textarea,
+.ui-bar-b button {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.ui-bar-b .ui-link-inherit {
+  color: #fff;
+}
+
+.ui-bar-b a.ui-link {
+  color: #ddf0f8;
+  font-weight: bold;
+}
+
+.ui-bar-b a.ui-link:visited {
+  color: #ddf0f8;
+}
+
+.ui-bar-b a.ui-link:hover {
+  color: #ddf0f8;
+}
+
+.ui-bar-b a.ui-link:active {
+  color: #ddf0f8;
+}
+
+.ui-bar-a .ui-shadow,
+.ui-bar-b .ui-shadow,
+.ui-bar-c .ui-shadow {
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.ui-bar, .ui-body {
+  position: relative;
+  padding: .4em 15px;
+  overflow: hidden;
+  display: block;
+  clear: both;
+}
+
+.ui-bar {
+  font-size: 16px;
+  margin: 0;
+  height: 100%;
+}
+
+.ui-bar h1, .ui-bar h2, .ui-bar h3, .ui-bar h4, .ui-bar h5, .ui-bar h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  display: inline-block;
+}

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/heart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/icon.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/refresh.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/grid.css" afterPath="$PROJECT_DIR$/css/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/today.html" afterPath="$PROJECT_DIR$/inc/today.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/refresh.css" afterPath="$PROJECT_DIR$/css/refresh.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mockup.iws" />
@@ -37,6 +39,7 @@
     <file path="$PROJECT_DIR$/../../js/GMU/_src/core/zepto/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371663704570" ignored="false" />
     <file path="/zepto.js" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371663704189" ignored="false" />
     <file path="/test.html" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371697243152" ignored="false" />
+    <file path="/grid.less" changelist="a5a0f152-943e-44e9-b6ad-3af5aa9ab4b0" time="1371767790121" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +82,46 @@
       <file leaf-file-name="icons.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/icons.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="14" selection-start="30272" selection-end="30272" vertical-scroll-proportion="-6.08">
+            <state line="8" column="14" selection-start="0" selection-end="33181" vertical-scroll-proportion="-6.08">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="today.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="icon.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/icon.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="262" column="0" selection-start="33025" selection-end="33025" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#46#13474#1" expanded="true" />
+                <element signature="e#13476#30199#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="today.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/today.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="10" selection-start="5230" selection-end="5230" vertical-scroll-proportion="3.4333334">
+            <state line="115" column="10" selection-start="5230" selection-end="5230" vertical-scroll-proportion="-69.89286">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="veryless.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/veryless.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="261" column="5" selection-start="5685" selection-end="5685" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="refresh.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/refresh.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="658" selection-end="658" vertical-scroll-proportion="2.1962366">
               <folding />
             </state>
           </provider>
@@ -97,20 +130,17 @@
       <file leaf-file-name="grid.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/grid.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="-0.0">
+            <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jq.ui.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/jq.ui.less">
+      <file leaf-file-name="grid.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/grid.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="47" selection-start="2958" selection-end="2959" vertical-scroll-proportion="-2.1666667">
-              <folding>
-                <element signature="e#30101#87712#1" expanded="true" />
-                <element signature="e#92400#94507#2" expanded="true" />
-              </folding>
+            <state line="162" column="43" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,7 +148,7 @@
       <file leaf-file-name="refresh.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/refresh.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="15" selection-start="341" selection-end="341" vertical-scroll-proportion="-12.92">
+            <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -142,9 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/test.js" />
-        <option value="$PROJECT_DIR$/js/test.js" />
-        <option value="$PROJECT_DIR$/plugins/jq.iscroll.js" />
         <option value="$PROJECT_DIR$/defer/today.html" />
         <option value="$PROJECT_DIR$/js/z.ui.js" />
         <option value="$PROJECT_DIR$/js/refresh.iscroll.js" />
@@ -158,6 +185,9 @@
         <option value="$PROJECT_DIR$/css/jq.ui.less" />
         <option value="$PROJECT_DIR$/css/grid.css" />
         <option value="$PROJECT_DIR$/inc/today.html" />
+        <option value="$PROJECT_DIR$/css/icon.less" />
+        <option value="$PROJECT_DIR$/css/grid.less" />
+        <option value="$PROJECT_DIR$/css/refresh.less" />
       </list>
     </option>
   </component>
@@ -221,35 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,7 +367,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="786" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -374,7 +376,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.6736" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5003978" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3264" sideWeight="0.5003978" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -448,37 +450,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/refresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/jq.ui.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="173" selection-start="101162" selection-end="101162" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1371698676384" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/jq.ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="1812" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/jq.ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3897436">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/jq.scroller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="10" selection-start="2690" selection-end="2691" vertical-scroll-proportion="-2.9360569">
@@ -514,13 +485,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/refresh.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="341" selection-end="341" vertical-scroll-proportion="-12.92">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/jq.ui.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="47" selection-start="2958" selection-end="2959" vertical-scroll-proportion="-2.1666667">
@@ -547,23 +511,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/today.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="10" selection-start="5230" selection-end="5230" vertical-scroll-proportion="-69.89286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/veryless.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="261" column="5" selection-start="5685" selection-end="5685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/refresh.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/icons.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="30272" selection-end="30272" vertical-scroll-proportion="-6.08">
+        <state line="8" column="14" selection-start="0" selection-end="33181" vertical-scroll-proportion="-6.08">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/icon.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="0" selection-start="33025" selection-end="33025" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#46#13474#1" expanded="true" />
+            <element signature="e#13476#30199#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/grid.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/today.html">
+    <entry file="file://$PROJECT_DIR$/css/grid.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="10" selection-start="5230" selection-end="5230" vertical-scroll-proportion="3.4333334">
+        <state line="162" column="43" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/refresh.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="658" selection-end="658" vertical-scroll-proportion="2.1962366">
           <folding />
         </state>
       </provider>
